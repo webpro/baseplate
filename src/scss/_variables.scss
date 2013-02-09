@@ -1,0 +1,25 @@
+// Colors
+
+$white: #FFF;
+$grey: #AAA;
+$light-grey: #EEE;
+
+// Breakpoints
+
+$min-xlarge: 1280px;
+$max-large: $min-xlarge - 1;
+$min-large: 800px;
+$max-medium: $min-large - 1;
+$min-medium: 600px;
+$max-small: $min-medium - 1;
+
+// Media queries
+
+$only-small: "all and (max-width: #{$max-small})";
+$only-medium: "all and (min-width: #{$min-medium}) and (max-width: #{$max-medium})";
+$only-large: "all and (min-width: #{$min-large}) and (max-width: #{$max-large})";
+$only-xlarge: "all and (min-width: #{$min-xlarge})";
+$gte-medium: "all and (min-width: #{$min-medium})";
+$lte-medium: "all and (max-width: #{$max-medium})";
+$gte-large: "all and (min-width: #{$min-large})";
+$lte-large: "all and (max-width: #{$max-large})";

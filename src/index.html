@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>baseplate</title>
+        <link rel="stylesheet" href="css/all.css">
+    </head>
+    <body>
+
+        <div class="wrapper">
+
+            <!-- header -->
+            <div class="grid">
+                <div class="unit-3-4">
+                    <p>baseplate</p>
+                </div>
+                <div class="unit-1-4">
+                    <p><a href="https://github.com/webpro/baseplate">github</a></p>
+                </div>
+            </div>
+
+            <!-- navigation -->
+            <nav>
+                <ul class="horizontal-list">
+                    <li><a href="#" class="nav-link">NavItem 1</a></li>
+                    <li><a href="#" class="nav-link">NavItem 2</a></li>
+                    <li><a href="#" class="nav-link">NavItem 3</a></li>
+                </ul>
+            </nav>
+
+            <!-- main -->
+            <div class="grid">
+
+				<div class="unit-1-2">
+
+					<div data-view-type="view/moduleA/index"></div>
+
+				</div>
+
+				<div class="unit-1-2">
+
+					<div data-view-type="view/moduleA/index"></div>
+
+				</div>
+
+            </div>
+        </div>
+
+        <!-- DEV/DEBUG -->
+        <!--<script src="demo-app/main.js"></script>-->
+        <!--<script src="demo-app/main-dev.js"></script>-->
+        <!--<script src="lib/requirejs/require.js"></script>-->
+
+        <!-- OPTIMIZED -->
+        <script data-main="demo-app/main" src="lib/requirejs/require.js"></script>
+
+    </body>
+</html>

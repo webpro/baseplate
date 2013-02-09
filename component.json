@@ -1,0 +1,13 @@
+{
+    "name": "baseplate",
+    "version": "0.0.1",
+    "dependencies": {
+        "requirejs": "~2.1",
+        "requirejs-text": "~2.0",
+        "jquery": "~1.9",
+        "backbone": "~0.9",
+		"backbone.stickit": "~0.6",
+        "lodash": "~1.0",
+        "when": "~1.7"
+    }
+}

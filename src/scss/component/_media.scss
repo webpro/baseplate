@@ -1,0 +1,28 @@
+/*
+Media
+
+Markup:
+<div class="media">
+    <h3>Media title</h3>
+    <img class="media-img" src="http://placekitten.com/200/120" alt="">
+    <div class="media-content">
+        <p>Media content</p>
+    </div>
+</div>
+
+Styleguide 1.2
+*/
+
+.media {
+    margin: 0 10px 10px;
+}
+
+.media, .media-content {
+    overflow: hidden;
+}
+
+.media .media-img {
+    float: left;
+    margin-right: 10px;
+    display: block;
+}

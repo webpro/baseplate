@@ -1,0 +1,26 @@
+/*
+Lists
+
+Styleguide 1.1
+*/
+
+/*
+Horizontal list
+
+Markup:
+<ul class="horizontal-list">
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+
+Styleguide 1.1
+*/
+
+.horizontal-list {
+    @include normalize-list;
+}
+
+.horizontal-list li {
+    display: inline-block;
+    margin-right: 1em;
+}

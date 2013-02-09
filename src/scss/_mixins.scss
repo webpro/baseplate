@@ -1,0 +1,22 @@
+@mixin normalize-list {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+@mixin clear-float {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin respond-to($media) {
+    @media #{$media} {
+        @content;
+    }
+}

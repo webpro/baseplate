@@ -1,0 +1,18 @@
+{
+    "test_page": "test/index.html",
+    "on_start": {
+        "command": "browserstack tunnel localhost:<port>",
+        "wait_for_text": "You can now access your local server(s) in our remote browser"
+    },
+    "launchers": {
+		"bs_ie": {
+			"command": "browserstack launch --attach ie:10.0 <url>",
+			"protocol": "browser"
+		},
+		"bs_chrome": {
+			"command": "browserstack launch --attach chrome:24.0 <url>",
+			"protocol": "browser"
+		}
+    },
+    "launch_in_ci": []
+}
