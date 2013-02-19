@@ -6,8 +6,11 @@
         "requirejs-text": "~2.0",
         "jquery": "~1.9",
         "backbone": "~0.9",
-		"backbone.stickit": "~0.6",
+        "backbone.stickit": "~0.6",
         "lodash": "~1.0",
         "when": "~1.7"
+    },
+    "devDependencies": {
+        "jasmine": "~1.3"
     }
 }
