@@ -62,6 +62,10 @@ See testem docs for more options, e.g. to run tests in [browserstack](https://gi
 
     testem ci -l phantomjs
 
+There is some highly experimental behavior testing setup in the `/test/behavior` folder. Essentially, it's Jasmine + jQuery + [jasmine-jquery](https://github.com/velesin/jasmine-jquery). Run the tests in the browser at `/test/behavior`, or:
+
+    testem -t test/behavior/index.html
+
 ### Styleguide
 
 With documentation in-line in the SCSS, a styleguide can easily be generated with [kss-node](https://github.com/hughsk/kss-node):
