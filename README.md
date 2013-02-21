@@ -22,13 +22,28 @@ The baseplate has [component.json](component.json) ([Bower](http://twitter.githu
 * [Backbone](http://backbonejs.org/)
 * [when.js](https://github.com/cujojs/when)
 
-### Build
+### grunt
 
-The baseplate is configured to be optimized and built with [r.js](http://requirejs.org/docs/optimization.html). The build is run from a [node script](build/index.js), for more flexibility in the build process. To build:
+The baseplate has a [Gruntfile.js](Gruntfile.js) (for [grunt-cli](https://github.com/gruntjs/grunt-cli)) which is pre-configured with:
 
-    node build
+* [requirejs](https://github.com/gruntjs/grunt-contrib-requirejs)
+* [jshint](https://github.com/gruntjs/grunt-contrib-jshint)
+* [compass](https://github.com/gruntjs/grunt-contrib-compass)
+* [watch](https://github.com/gruntjs/grunt-contrib-watch)
 
-It is currently set up to build one file for the 3rd party libraries plus application core, and one file for each application module. The optimized application runs at `/dist/index.html`.
+#### Build
+
+To build using the `r.js` optimizer and with minified CSS:
+
+    grunt build
+
+The build configuration is set up to build one file for the 3rd party libraries plus application core, and one file for each application module. The optimized application runs at `/dist/index.html`.
+
+#### Watcher
+
+Changes in JS will trigger jshint, and changes in SASS will trigger Compass compilation for development (incl. sourcemap):
+
+    grunt watch
 
 ### CSS
 
@@ -37,18 +52,6 @@ The baseplate contains the bare minimum for working with [SASS](http://sass-lang
     grunt compass:dev
 
 Alternatively, `compass compile` from the root (configured by [config.rb](config.rb)).
-
-### grunt
-
-The baseplate has a [Gruntfile.js](Gruntfile.js) (for [grunt-cli](https://github.com/gruntjs/grunt-cli)) which is pre-configured with:
-
-* jshint
-* compass
-* watch
-
-Changes in JS will trigger jshint, and changes in SASS will trigger Compass compilation:
-
-    grunt watch
 
 ### Test
 
