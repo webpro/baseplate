@@ -1,6 +1,14 @@
 (function(global) {
 
-    var requireConfig = {
+    if(!(typeof require !== 'undefined' && require.config)) {
+        require = {
+            config: function(configObj) {
+                global.require = configObj
+            }
+        }
+    }
+
+    require.config({
         baseUrl: 'demo-app',
         deps: ['index'],
         callback: function(app) {
@@ -30,14 +38,6 @@
         packages: [
             { name: 'when', location: '../lib/when', main: './when' }
         ]
-    };
-
-    if(typeof require !== 'undefined' && typeof require.config === 'function') {
-        require.config(requireConfig);
-    } else if(typeof exports === 'object') {
-        module.exports = requireConfig;
-    } else {
-        global.require = requireConfig;
-    }
+    });
 
 })(this);
