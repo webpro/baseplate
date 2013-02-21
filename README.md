@@ -82,7 +82,7 @@ The baseplate has an example application setup. Everything described above (buil
 * A smart [AMD configuration](src/demo-app/main.js), supporting:
   * default usage (like ```<script data-main="main" src="require.js"></script>```)
   * extension by other configurations ([main-dev.js](src/demo-app/main-dev.js)), e.g. to load non-minified libraries.
-  * reuse by the node build script
+  * reuse by the grunt comfiguration
 * A [proxybox](src/demo-app/core/proxybox.js) module, a "sandbox" for [modules](src/demo-app/view/moduleA/index.js) to use the libraries and build upon.
   * It just proxies `$`, `_`, `Backbone`, and `when` to make them easily accessible with one dependency.
   * This idea can be modified/extended to e.g. create abstractions, adapters, facades, you name it.
