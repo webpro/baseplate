@@ -5,11 +5,10 @@ http_path = "/"
 css_dir = "src/css"
 sass_dir = "src/scss"
 images_dir = "src/image"
-javascripts_dir = "src/demo-app"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
-output_style = ( environment == :production ) ? :compressed : :expanded
+output_style = :expanded
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
@@ -17,4 +16,4 @@ output_style = ( environment == :production ) ? :compressed : :expanded
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
 
-sass_options = ( environment == :production ) ? {:debug_info => false} : {:debug_info => true}
+sass_options = {:debug_info => true}

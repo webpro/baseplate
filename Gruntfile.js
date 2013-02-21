@@ -61,7 +61,11 @@ module.exports = function(grunt) {
                 options: {
                     environment: 'production',
                     force: true,
-                    config: 'config.rb'
+                    config: 'config.rb',
+                    cssDir: 'dist/css',
+                    sassDir: 'dist/scss',
+                    outputStyle: 'compressed',
+                    noLineComments: true
                 }
             }
         }
@@ -73,6 +77,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('default', ['jshint', 'compass:dev']);
-    grunt.registerTask('build', ['requirejs']);
+    grunt.registerTask('build', ['requirejs', 'compass:dist']);
 
 };
