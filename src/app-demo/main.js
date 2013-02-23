@@ -9,7 +9,6 @@
     }
 
     require.config({
-        baseUrl: 'app-demo',
         deps: ['index'],
         callback: function(app) {
             app.initialize();

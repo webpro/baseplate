@@ -16,9 +16,9 @@ module.exports = function(grunt) {
             },
             demo: {
                 options: {
-                    version: '0.0.1',
                     appDir: 'src',
                     mainConfigFile: 'src/app-demo/main.js',
+                    baseUrl: 'app-demo',
                     dir: 'dist',
                     skipDirOptimize: true,
                     optimizeCss: 'none',
