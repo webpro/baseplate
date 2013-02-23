@@ -1,17 +1,14 @@
 define([
     'proxybox',
     'model/modelA',
-    'text!./template.html'
+    'hgn!./template.html'
 ], function(proxybox, ModelA, template) {
 
-    var Backbone = proxybox.Backbone,
-        _ = proxybox._;
-
-	var compiledTemplate = _.template(template);
+    var Backbone = proxybox.Backbone;
 
     return Backbone.View.extend({
 
-        template: compiledTemplate,
+        template: template,
 
         model: new ModelA(),
 
@@ -20,7 +17,7 @@ define([
         },
 
         render: function() {
-            this.$el.html(this.template(this.model.toJSON()));
+            this.$el.html(this.template.render(this.model.toJSON()));
         }
     });
 });

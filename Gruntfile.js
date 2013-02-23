@@ -13,10 +13,10 @@ module.exports = function(grunt) {
                     optimizeCss: 'none',
                     modules: [{
                         name: 'main',
-                        include: ['proxybox', 'text']
+                        include: ['proxybox', 'text', 'hgn']
                     }, {
                         name: 'view/moduleA/index',
-                        exclude: ['proxybox', 'text']
+                        exclude: ['proxybox', 'text', 'hgn']
                     }],
                     inlineText: true,
                     onBuildRead: function(moduleName, path, contents) {
