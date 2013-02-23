@@ -3,7 +3,18 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         requirejs: {
-            compile: {
+            bare: {
+                options: {
+                    appDir: 'src',
+                    mainConfigFile: 'src/app-bare/main.js',
+                    baseUrl: 'app-bare',
+                    dir: 'dist',
+                    skipDirOptimize: true,
+                    optimizeCss: 'none',
+                    name: 'main'
+                }
+            },
+            demo: {
                 options: {
                     version: '0.0.1',
                     appDir: 'src',
@@ -77,6 +88,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('default', ['jshint', 'compass:dev']);
-    grunt.registerTask('build', ['requirejs', 'compass:dist']);
+    grunt.registerTask('build', ['requirejs:demo', 'compass:dist']);
 
 };
