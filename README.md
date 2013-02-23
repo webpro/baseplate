@@ -28,7 +28,7 @@ Element | Solution
 Template engine | Hogan.js
 Async helper | when.js
 
-Application modules are wired together using a small, custom application (see [demo app](#Demo-app) for more details).
+Application modules are wired together using a small, custom application (see [demo app](#demo-app) for more details).
 
 ## Installation
 
