@@ -7,7 +7,7 @@ module.exports = function(grunt) {
                 options: {
                     version: '0.0.1',
                     appDir: 'src',
-                    mainConfigFile: 'src/demo-app/main.js',
+                    mainConfigFile: 'src/app-demo/main.js',
                     dir: 'dist',
                     skipDirOptimize: true,
                     optimizeCss: 'none',
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: [
-                    'src/demo-app/**/*.js'
+                    'src/app-demo/**/*.js'
                 ],
                 tasks: ['jshint']
             },
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 
         jshint: {
             files: [
-                'js/demo-app/**/*.js'
+                'js/app-demo/**/*.js'
             ],
             options: {
                 eqeqeq: true,

@@ -79,18 +79,18 @@ With documentation in-line in the SCSS, a styleguide can easily be generated wit
 
 The baseplate has an example application setup. Everything described above (build, test, etc.) is run on the demo app. This really is a basic, example setup and not ready for complex SPA's. Having said that, it has some interesting ideas/features:
 
-* A smart [AMD configuration](src/demo-app/main.js), supporting:
+* A smart [AMD configuration](src/app-demo/main.js), supporting:
   * default usage (like ```<script data-main="main" src="require.js"></script>```)
-  * extension by other configurations ([main-dev.js](src/demo-app/main-dev.js)), e.g. to load non-minified libraries.
+  * extension by other configurations ([main-dev.js](src/app-demo/main-dev.js)), e.g. to load non-minified libraries.
   * reuse by the grunt comfiguration
-* A [proxybox](src/demo-app/core/proxybox.js) module, a "sandbox" for [modules](src/demo-app/view/moduleA/index.js) to use the libraries and build upon.
+* A [proxybox](src/app-demo/core/proxybox.js) module, a "sandbox" for [modules](src/app-demo/view/moduleA/index.js) to use the libraries and build upon.
   * It just proxies `$`, `_`, `Backbone`, and `when` to make them easily accessible with one dependency.
   * This idea can be modified/extended to e.g. create abstractions, adapters, facades, you name it.
-* A [core module](src/demo-app/core/view.manager.js) which lazy-loads and installs AMD modules declared in the markup.
+* A [core module](src/app-demo/core/view.manager.js) which lazy-loads and installs AMD modules declared in the markup.
   * E.g. ```<div data-view-type="view/moduleA/index"></div>```.
 * A few example modules to extend/adapt core libraries, including:
-  * [configure Lo-Dash](src/demo-app/core/lib/lodash.js)'s template interpolation (i.e. use `hello {name}` instead of `hello <%= name %>`)
-  * [extend Backbone](src/demo-app/core/lib/backbone.js) with [backbone.stickit](http://nytimes.github.com/backbone.stickit/).
+  * [configure Lo-Dash](src/app-demo/core/lib/lodash.js)'s template interpolation (i.e. use `hello {name}` instead of `hello <%= name %>`)
+  * [extend Backbone](src/app-demo/core/lib/backbone.js) with [backbone.stickit](http://nytimes.github.com/backbone.stickit/).
 * Some example SCSS files, including:
   * [demo comments](src/scss/component/_media.scss) to generate a styleguide
   * a hidden gem: an awesome [grid system](src/scss/_grid.scss) (alpha).

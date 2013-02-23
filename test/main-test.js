@@ -1,6 +1,6 @@
 (function(global) {
 
-    global.require.baseUrl = '../src/demo-app';
+    global.require.baseUrl = '../src/app-demo';
     global.require.paths['specs'] = '../../test/specs';
 
     global.require.deps = [
