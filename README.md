@@ -8,25 +8,25 @@ The baseplate project is a baseline/boilerplate setup to quickly get up and runn
 
 The base stack is opinionated (yet it should be easy to swap/ignore/remove most elements):
 
-| Element | Solution |
-| | |
-| Module format | AMD
-| Module loader | RequireJS
-| Module builder | RequireJS Optimizer
-| Package manager | npm & Bower
-| Build framework | grunt
-| Test runner | Testem
-| Test framework | Jasmine
-| JS Stack | Lo-dash, Backbone, jQuery
-| CSS Preprocessor | SASS, Compass
-| Styleguide generator | kss-node
+Element | Solution
+--- | ---
+Module format | AMD
+Module loader | RequireJS
+Module builder | RequireJS Optimizer
+Package manager | npm & Bower
+Build framework | grunt
+Test runner | Testem
+Test framework | Jasmine
+JS Stack | Lo-dash, Backbone, jQuery
+CSS Preprocessor | SASS, Compass
+Styleguide generator | kss-node
 
 The bare application is based on the above. Another demo application also includes:
 
-| Element | Solution |
-| | |
-| Template engine | Hogan.js
-| Async helper | when.js
+Element | Solution
+--- | ---
+Template engine | Hogan.js
+Async helper | when.js
 
 Application modules are wired together using a small, custom application (see [demo app](#Demo-app) for more details).
 
