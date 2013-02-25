@@ -16,6 +16,7 @@ define(['wire'], function(wire) {
 
             wire.load('wires/' + wireId, null, function(context) {
                 console.log(context);
+                // context.destroy();
             });
 
         }

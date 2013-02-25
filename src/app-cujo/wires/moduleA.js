@@ -8,6 +8,9 @@ define({
                     $ref: 'dom.first![data-view-type="moduleA"]'
                 }
             }]
+        },
+        destroy: {
+            remove: []
         }
     },
 
