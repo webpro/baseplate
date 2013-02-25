@@ -6,8 +6,8 @@
 
         paths: {
             jquery: '../lib/jquery/jquery.min',
-            lodash: '../lib/lodash/lodash.min',
-            underscore: '../lib/lodash/lodash.min',
+            lodash: '../lib/lodash/lodash',
+            underscore: '../lib/lodash/lodash',
             text: '../lib/requirejs-text/text'
         },
 
