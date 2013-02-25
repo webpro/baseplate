@@ -1,4 +1,4 @@
-define(['require'], function(require) {
+define(['wire'], function(wire) {
 
     return {
 
@@ -12,9 +12,9 @@ define(['require'], function(require) {
 
         createView: function(node) {
 
-            var wire = node.getAttribute('data-view-type');
+            var wireId = node.getAttribute('data-view-type');
 
-            require(['wire!wires/'+wire], function(context) {
+            wire.load('wires/' + wireId, null, function(context) {
                 console.log(context);
             });
 
