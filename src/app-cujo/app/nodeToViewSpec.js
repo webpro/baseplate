@@ -10,6 +10,9 @@ define(function() {
 		// is represented as an object literal and will be used directly.
 		// These two wire specs will be merged together, then the single
 		// resulting wire spec will be wired.
+
+		// Note that we're injecting the particular viewNode (see wires/moduleA.js)
+		// that will be used for this "instantiation" of the moduleA view
 		return ['wires/' + node.getAttribute('data-view-type'), { viewNode: node }];
 	};
 
