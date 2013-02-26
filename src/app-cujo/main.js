@@ -1,27 +1,36 @@
 (function(global) {
 
-    var cjsmCfg = { moduleLoader: 'curl/loader/cjsm11' };
+    if(!(typeof require !== 'undefined' && require.config)) {
+        require = {
+            config: function(configObj) {
+                global.require = configObj
+            }
+        }
+    }
 
-    var config = {
-
+    require.config({
+        deps: ['wire!wires/app'],
+        callback: function(context) {
+            console.log(context);
+        },
+        shim: {
+            'backbone': {
+                'deps': ['lodash', 'jquery'],
+                'exports': 'Backbone'
+            }
+        },
         paths: {
             jquery: '../lib/jquery/jquery.min',
-            lodash: '../lib/lodash/lodash',
-            underscore: '../lib/lodash/lodash',
-            text: '../lib/requirejs-text/text'
+            lodash: '../lib/lodash/lodash.min',
+            backbone: '../lib/backbone/backbone-min',
+            text: '../lib/requirejs-text/text',
+            'wire/domReady': '../lib/requirejs-domready/domReady'
         },
-
         packages: [
-            { name: 'curl',  location: '../lib/curl/src/curl' },
             { name: 'wire',  location: '../lib/wire',  main: 'wire' },
             { name: 'meld',  location: '../lib/meld',  main: 'meld' },
-            { name: 'when',  location: '../lib/when',  main: 'when' },
-            { name: 'backbone', location: '../lib/backbone', main: 'backbone-min', config: cjsmCfg }
-        ],
-
-        preloads: ['jquery']
-    };
-
-    curl(config, ['wire!wires/app']);
+            { name: 'when',  location: '../lib/when',  main: 'when' }
+        ]
+    });
 
 })(this);
