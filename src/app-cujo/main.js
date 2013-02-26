@@ -23,6 +23,7 @@
             jquery: '../lib/jquery/jquery.min',
             lodash: '../lib/lodash/lodash.min',
             backbone: '../lib/backbone/backbone-min',
+            utils: 'lib/utils',
             text: '../lib/requirejs-text/text',
             'wire/domReady': '../lib/requirejs-domready/domReady'
         },
