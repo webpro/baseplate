@@ -4,9 +4,8 @@ define({
         create: {
             module: 'view/moduleA/index',
             args: [{
-                // viewNode must be provided.  See nodeToViewSpec.js.  This
-                // viewNode is essentially "passed in" to each instance of a
-                // context created when this spec is wired
+                // This `viewNode` is coming from the contextual wiring
+                // after the `nodeToViewSpec` transformation.
                 el: { $ref: 'viewNode' }
             }]
         },
