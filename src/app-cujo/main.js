@@ -9,7 +9,7 @@
     }
 
     require.config({
-        deps: ['wire!wires/app'],
+        deps: ['wire!context/app'],
         callback: function(context) {
             console.log(context);
         },

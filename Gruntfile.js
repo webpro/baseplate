@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                         include: ['wire/lib/context', 'text', 'wire/domReady']
                     }, {
                         name: 'utils',
-                        exclude: ['wires/app', 'when']
+                        exclude: ['context/app', 'when']
                     }, {
                         name: 'view/moduleA/index',
                         exclude: ['utils', 'text']
