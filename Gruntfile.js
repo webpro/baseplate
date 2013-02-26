@@ -34,6 +34,34 @@ module.exports = function(grunt) {
                         return contents.replace(/console\.(.*)/g, '');
                     }
                 }
+            },
+            cujo: {
+                options: {
+                    appDir: 'src',
+                    mainConfigFile: 'src/app-cujo/main.js',
+                    baseUrl: 'app-cujo',
+                    dir: 'dist',
+                    skipDirOptimize: true,
+                    optimizeCss: 'none',
+                    paths: {
+                        'wire/build/amd/builder': 'lib/wire-amd-builder',
+                        'wire/debug': '../lib/wire/wire'
+                    },
+                    modules: [{
+                        name: 'main',
+                        include: ['wire/lib/context', 'text', 'wire/domReady']
+                    }, {
+                        name: 'utils',
+                        exclude: ['wires/app', 'when']
+                    }, {
+                        name: 'view/moduleA/index',
+                        exclude: ['utils', 'text']
+                    }],
+                    inlineText: true,
+                    onBuildRead: function(moduleName, path, contents) {
+                        return contents.replace(/console\.(.*)/g, '');
+                    }
+                }
             }
         },
 
