@@ -15,7 +15,7 @@ Module loader | RequireJS
 Module builder | RequireJS Optimizer
 Package manager | npm & Bower
 Build framework | grunt
-Test runner | Testem
+Test runner | Testem or Testacular
 Test framework | Jasmine
 JS Stack | Lo-dash, Backbone, jQuery
 CSS Preprocessor | SASS, Compass
@@ -32,9 +32,13 @@ Application modules are wired together using a small, custom application (see [d
 
 ## Installation
 
-Got [Node](http://nodejs.org/) and [npm](https://github.com/isaacs/npm) installed, right? Otherwise, please do so first.
+Got [Node](http://nodejs.org/) and [npm](https://github.com/isaacs/npm) installed, right? Otherwise, please do so first. Then install whatever you'd like to use:
 
-    npm install -g bower grunt-cli testem kss
+    npm install -g bower
+    npm install -g grunt-cli
+    npm install -g testem
+    npm install -g testacular
+    npm install -g kss
     gem install sass compass
 
 Then baseplate and its dependencies can be installed:
@@ -87,13 +91,25 @@ Alternatively, use `compass compile` from the root (configured by [config.rb](co
 
 The baseplate works with [Jasmine](http://pivotal.github.com/jasmine/) out of the box. Just start writing tests (and add them to the [test config](test/main-test.js)), and run them in the browser at `/test`.
 
-Additionally, tests can be watched and executed automatically in connected browsers with [testem](https://github.com/airportyh/testem):
+#### Testem
+
+Tests can be watched and executed automatically in connected browsers with [testem](https://github.com/airportyh/testem):
 
     testem
 
 See testem docs for more options, e.g. to run tests in [browserstack](https://github.com/airportyh/testem/tree/master/examples/browserstack). Or [PhantomJS](https://github.com/airportyh/testem#phantomjs):
 
     testem ci -l phantomjs
+
+#### Testacular
+
+[Testacular](http://testacular.github.com/0.6.0/index.html) works similar to testem, and the command to watch files for changes and run the tests automatically in configured browsers is straightforward:
+
+    testacular start
+
+There is a code coverage reporter configured already, which gets saved in the `/coverage` folder after running tests. Also see the [using it](https://github.com/testacular/testacular#using-it) section in the Testacular docs, and the Testacular [configuration file](testacular.conf.js).
+
+#### Behavior tests
 
 There is some highly experimental behavior testing setup in the `/test/behavior` folder. Essentially, it's Jasmine + jQuery + [jasmine-jquery](https://github.com/velesin/jasmine-jquery). Run the tests in the browser at `/test/behavior`, or:
 
