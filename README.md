@@ -30,6 +30,8 @@ Async helper | when.js
 
 Application modules are wired together using a small, custom application (see [demo app](#demo-app) for more details).
 
+The [third demo app](#cujo) is using cujo's wire.js to wire the modules together.
+
 ## Installation
 
 Got [Node](http://nodejs.org/) and [npm](https://github.com/isaacs/npm) installed, right? Otherwise, please do so first. Then install whatever you'd like to use:
@@ -121,7 +123,9 @@ With documentation in-line in the SCSS, a styleguide can easily be generated wit
 
     compass compile && kss-node src/scss styleguide --css src/css/all.css
 
-## Demo app
+## Demonstration apps
+
+### demo
 
 The baseplate demo application is an example setup. Everything described above (build, test, etc.) is run on this demo app. This really is a basic, example setup and not ready for complex SPA's. Having said that, it has some interesting ideas/features:
 
@@ -141,6 +145,10 @@ The baseplate demo application is an example setup. Everything described above (
 * Some example SCSS files, including:
   * [demo comments](src/scss/component/_media.scss) to generate a styleguide
   * a hidden gem: an awesome [grid system](src/scss/_grid.scss) (alpha).
+
+### cujo
+
+Similar to the demo app, but [using](src/app-cujo/context/app.js) cujo's [wire.js](https://github.com/cujojs/wire) to [load and instantiate](src/app-cujo/view/moduleA/spec.js) modules declared in the markup. Also includes a [wire! plugin](src/app-cujo/lib/wire-amd-builder.js) for RequireJS optimized builds.
 
 ## Outro
 

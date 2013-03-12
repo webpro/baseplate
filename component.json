@@ -9,7 +9,10 @@
         "backbone.stickit": "~0.6",
         "lodash": "~1.0",
         "when": "~1.7",
-        "hogan": "*"
+        "hogan": "*",
+        "curl": "~0.7",
+        "wire": "~0.9",
+        "meld": "~1.2"
     },
     "devDependencies": {
         "jasmine": "~1.3",
