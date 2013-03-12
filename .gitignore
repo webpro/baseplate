@@ -3,3 +3,4 @@ src/css
 dist
 styleguide
 .sass-cache
+node_modules
