@@ -8,14 +8,14 @@ basePath = '';
 
 // list of files / patterns to load in the browser
 files = [
-  JASMINE,
-  JASMINE_ADAPTER,
-  'src/app-demo/main.js',
-  'test/main-testacular.js',
-  REQUIRE,
-  REQUIRE_ADAPTER,
-  {pattern: 'src/**/*.js', included: false},
-  {pattern: 'test/**/*.js', included: false}
+    JASMINE,
+    JASMINE_ADAPTER,
+    'src/app-demo/main.js',
+    'test/main-testacular.js',
+    REQUIRE,
+    REQUIRE_ADAPTER,
+    {pattern: 'src/**/*.js', included: false},
+    {pattern: 'test/**/*.js', included: false}
 ];
 
 preprocessors = {
@@ -23,8 +23,8 @@ preprocessors = {
 };
 
 coverageReporter = {
-    type : 'html',
-    dir : 'coverage/'
+    type: 'html',
+    dir: 'coverage/'
 };
 
 // list of files to exclude
