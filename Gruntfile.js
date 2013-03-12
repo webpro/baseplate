@@ -54,8 +54,13 @@ module.exports = function(grunt) {
                         name: 'utils',
                         exclude: ['context/app', 'when']
                     }, {
-                        name: 'view/moduleA/index',
+                        name: 'view/moduleA/spec',
+                        include: ['view/moduleA/index'],
                         exclude: ['utils', 'text']
+                    }, {
+                        name: 'view/moduleB/spec',
+                        include: ['view/moduleB/index'],
+                        exclude: []
                     }],
                     inlineText: true,
                     onBuildRead: function(moduleName, path, contents) {
