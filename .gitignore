@@ -1,5 +1,4 @@
 src/lib
-src/css
 dist
 styleguide
 .sass-cache
