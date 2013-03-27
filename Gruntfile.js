@@ -11,18 +11,33 @@ module.exports = function(grunt) {
                     out: 'dist/app-bare/main.js'
                 }
             },
-            demo: {
+            demo_core: {
                 options: {
-                    appDir: 'src',
+                    name: 'main',
                     mainConfigFile: 'src/app-demo/main.js',
-                    baseUrl: 'app-demo',
-                    dir: 'dist',
+                    baseUrl: 'src/app-demo',
+                    out: 'dist/app-demo-core/core.min.js',
+                    paths: {
+                        requireLib: '../lib/requirejs/require'
+                    },
+                    include: ['requireLib', 'proxybox', 'text', 'hgn'],
+                    optimize: 'uglify2',
+                    inlineText: true,
+                    onBuildRead: function(moduleName, path, contents) {
+                        return contents.replace(/console\.(.*)/g, '');
+                    }
+                }
+            },
+            demo_app: {
+                options: {
+                    appDir: 'src/app-demo',
+                    mainConfigFile: 'src/app-demo/main.js',
+                    baseUrl: '.',
+                    dir: 'dist/app-demo',
                     skipDirOptimize: true,
                     optimizeCss: 'none',
+                    deps: ['../../dist/app-demo-core/core'],
                     modules: [{
-                        name: 'main',
-                        include: ['proxybox', 'text', 'hgn']
-                    }, {
                         name: 'view/moduleA/index',
                         exclude: ['proxybox', 'text', 'hgn']
                     }],
