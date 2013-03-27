@@ -5,13 +5,10 @@ module.exports = function(grunt) {
         requirejs: {
             bare: {
                 options: {
-                    appDir: 'src',
+                    name: 'main',
                     mainConfigFile: 'src/app-bare/main.js',
-                    baseUrl: 'app-bare',
-                    dir: 'dist',
-                    skipDirOptimize: true,
-                    optimizeCss: 'none',
-                    name: 'main'
+                    baseUrl: 'src/app-bare',
+                    out: 'dist/app-bare/main.js'
                 }
             },
             demo: {

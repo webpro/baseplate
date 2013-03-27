@@ -1,7 +1,11 @@
-(function(global) {
+require(['main'], function() {
 
-    global.require.paths.jquery = '../lib/jquery/jquery';
-    global.require.paths.lodash = '../lib/lodash/lodash';
-    global.require.paths.backbone = '../lib/backbone/backbone';
+    require.config({
+        paths: {
+            'jquery': '../lib/jquery/jquery',
+            'lodash': '../lib/lodash/lodash',
+            'backbone': '../lib/backbone/backbone'
+        }
+    });
 
-})(this);
+});
