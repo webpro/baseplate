@@ -125,6 +125,13 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.task.registerTask('requirejs:demo_core_nomin', function() {
+        var out = grunt.config.get('requirejs.demo_core.options.out');
+        grunt.config.set('requirejs.demo_core.options.out', out.replace(/\.min/, ''));
+        grunt.config.set('requirejs.demo_core.options.optimize', 'none');
+        grunt.task.run('requirejs:demo_core')
+    });
+
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
