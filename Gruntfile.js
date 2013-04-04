@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                     dir: 'dist/app-demo',
                     skipDirOptimize: true,
                     optimizeCss: 'none',
-                    deps: ['../../dist/app-demo-core/core'],
+                    deps: ['text', 'hgn', '../../dist/app-demo-core/core'],
                     modules: [{
                         name: 'view/moduleA/index',
                         exclude: ['proxybox', 'text', 'hgn']
@@ -138,6 +138,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('default', ['jshint', 'compass:dev']);
-    grunt.registerTask('build', ['requirejs:demo', 'compass:dist']);
+    grunt.registerTask('build', ['requirejs:demo_core', 'requirejs:demo_core_nomin', 'requirejs:demo_app', 'compass:dist']);
 
 };
