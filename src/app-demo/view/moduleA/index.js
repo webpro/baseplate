@@ -1,5 +1,5 @@
 define([
-    'proxybox',
+    'core/proxybox',
     './modelA',
     'hgn!./template.html'
 ], function(proxybox, ModelA, template) {

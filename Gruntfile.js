@@ -36,10 +36,15 @@ module.exports = function(grunt) {
                     dir: 'dist/app-demo',
                     skipDirOptimize: true,
                     optimizeCss: 'none',
-                    deps: ['text', 'hgn', '../../dist/app-demo-core/core'],
+                    paths: {
+                        text: '../lib/requirejs-text/text',
+                        hgn: '../rjs-plugin/requirejs-hogan/hogan',
+                        hogan: '../lib/hogan/web/builds/2.0.0/hogan-2.0.0.min.amd'
+                    },
+                    deps: ['text', 'hgn', '../../dist/core-demo/core'],
                     modules: [{
                         name: 'view/moduleA/index',
-                        exclude: ['proxybox', 'text', 'hgn']
+                        exclude: ['core/proxybox', 'text', 'hgn']
                     }],
                     inlineText: true,
                     onBuildRead: function(moduleName, path, contents) {

@@ -46,10 +46,12 @@
         </div>
 
         <!-- DEV/DEBUG (use "main-dev" to use non-minified libs) -->
-        <script data-main="main" src="../lib/requirejs/require.js"></script>
-
-        <!-- BUILD -->
-        <!--<script src="../../dist/app-demo-core/core.min.js"></script>-->
+        <script src="../../dist/core-demo/core.min.js"></script>
+        <script>
+            require(['core/bootstrap', 'main'], function(bootstrap) {
+                bootstrap();
+            });
+        </script>
 
     </body>
 </html>
