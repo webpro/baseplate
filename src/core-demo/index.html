@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>baseplate - core demo</title>
+    </head>
+    <body>
+
+        <script src="../lib/requirejs/require.js"></script>
+        <script>
+            require(['main'], function() {
+                require(['core/bootstrap', 'core/proxybox'], function(bootstrap, proxybox) {
+                    console.log(bootstrap);
+                    console.log(proxybox);
+                })
+            });
+        </script>
+
+    </body>
+</html>

@@ -1,6 +1,6 @@
 define([
     'jquery',
-    'core/lib/lodash',
+    './lodash',
     'backbone',
     'when'
 ], function($, _, Backbone, when) {

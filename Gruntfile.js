@@ -14,13 +14,13 @@ module.exports = function(grunt) {
             demo_core: {
                 options: {
                     name: 'main',
-                    mainConfigFile: 'src/app-demo/main.js',
-                    baseUrl: 'src/app-demo',
-                    out: 'dist/app-demo-core/core.min.js',
+                    mainConfigFile: 'src/core-demo/main.js',
+                    baseUrl: 'src/core-demo',
+                    out: 'dist/core-demo/core.min.js',
                     paths: {
                         requireLib: '../lib/requirejs/require'
                     },
-                    include: ['requireLib', 'proxybox', 'text', 'hgn'],
+                    include: ['requireLib', 'text', 'hgn'],
                     optimize: 'uglify2',
                     inlineText: true,
                     onBuildRead: function(moduleName, path, contents) {
