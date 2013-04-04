@@ -121,7 +121,7 @@ There is some highly experimental behavior testing setup in the `/test/behavior`
 
 With documentation in-line in the SCSS, a styleguide can easily be generated with [kss-node](https://github.com/hughsk/kss-node):
 
-    compass compile && kss-node src/scss styleguide --css src/css/all.css
+    compass compile && kss-node src/scss styleguide --css dist/css/all.css
 
 ## Demonstration apps
 
