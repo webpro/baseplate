@@ -1,16 +1,18 @@
-(function(global) {
+require(['../src/app-demo/main'], function() {
 
-    global.require.baseUrl = '../src/app-demo';
-    global.require.paths['specs'] = '../../test/specs';
+    require.config({
+        baseUrl: '../src/app-demo',
+        paths: {
+            'specs': '../../test/specs'
+        },
+        deps: [
+            'specs/model/modelA.spec'
+        ],
+        callback: function() {
+            var env = jasmine.getEnv();
+            env.addReporter(new jasmine.HtmlReporter);
+            env.execute();
+        }
+    });
 
-    global.require.deps = [
-        'specs/model/modelA.spec'
-    ];
-
-    global.require.callback = function() {
-        var env = jasmine.getEnv();
-        env.addReporter(new jasmine.HtmlReporter);
-        env.execute();
-    };
-
-})(this);
+});

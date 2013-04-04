@@ -1,5 +1,5 @@
 define([
-    'model/modelA'
+    'view/moduleA/modelA'
 ], function(ModelA) {
 
     describe('model/modelA', function() {
