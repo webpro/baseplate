@@ -10,10 +10,10 @@ basePath = '';
 files = [
     JASMINE,
     JASMINE_ADAPTER,
-    'src/app-demo/main.js',
-    'test/main-testacular.js',
     REQUIRE,
     REQUIRE_ADAPTER,
+    'dist/core-demo/core.min.js',
+    'test/main-testacular.js',
     {pattern: 'src/**/*.js', included: false},
     {pattern: 'test/**/*.js', included: false}
 ];

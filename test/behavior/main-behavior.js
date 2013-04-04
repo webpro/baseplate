@@ -1,16 +1,17 @@
-(function(global) {
+require(['../../src/app-demo/main'], function() {
 
-    global.require.baseUrl = '../../src/app-demo';
-    global.require.paths['behaviors'] = '../../test/behavior';
-
-    global.require.deps = [
-        'behaviors/moduleA.behavior'
-    ];
-
-    global.require.callback = function() {
-        var env = jasmine.getEnv();
-        env.addReporter(new jasmine.HtmlReporter);
-        env.execute();
-    };
-
-})(this);
+    require.config({
+        baseUrl: '../../src/app-demo',
+        paths: {
+            'behaviors': '../../test/behavior'
+        },
+        deps: [
+            'behaviors/moduleA.behavior'
+        ],
+        callback: function() {
+            var env = jasmine.getEnv();
+            env.addReporter(new jasmine.HtmlReporter);
+            env.execute();
+        }
+    });
+});
