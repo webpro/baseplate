@@ -1,6 +1,5 @@
 define([
-    './view.manager.js',
-    './proxybox'
+    './view.manager.js'
 ], function(ViewManager) {
 
     // Aggregator for core modules so they are available,

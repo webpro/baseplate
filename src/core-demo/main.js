@@ -1,5 +1,5 @@
 require.config({
-    deps: ['core/bootstrap', 'core/proxybox', 'backbone.stickit'],
+    deps: ['core/bootstrap', 'core/sandbox', 'backbone.stickit'],
     shim: {
         'backbone': {
             'deps': ['lodash', 'jquery'],

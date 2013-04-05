@@ -8,9 +8,9 @@
         <script src="../lib/requirejs/require.js"></script>
         <script>
             require(['main', 'plugins'], function() {
-                require(['core/bootstrap', 'core/proxybox'], function(bootstrap, proxybox) {
+                require(['core/bootstrap', 'core/sandbox'], function(bootstrap, sandbox) {
                     console.log(bootstrap);
-                    console.log(proxybox);
+                    console.log(sandbox);
                 })
             });
         </script>

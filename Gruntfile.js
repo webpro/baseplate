@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                     },
                     modules: [{
                         name: 'view/moduleA/index',
-                        exclude: ['core/proxybox', 'hgn']
+                        exclude: ['core/sandbox', 'hgn']
                     }],
                     inlineText: true,
                     onBuildRead: function(moduleName, path, contents) {

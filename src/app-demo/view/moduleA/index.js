@@ -1,10 +1,10 @@
 define([
-    'core/proxybox',
+    'core/sandbox',
     './modelA',
     'hgn!./template.html'
-], function(proxybox, ModelA, template) {
+], function(sandbox, ModelA, template) {
 
-    var Backbone = proxybox.Backbone;
+    var Backbone = sandbox.Backbone;
 
     return Backbone.View.extend({
 
