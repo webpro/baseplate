@@ -159,7 +159,6 @@ module.exports = function(grunt) {
         grunt.config.set('requirejs.demo_core.options.include', ['requireLib']);
         grunt.config.set('requirejs.demo_core.options.optimize', 'none');
         grunt.task.run('requirejs:demo_core');
-        grunt.task.run('requirejs:demo_plugins');
     });
 
     grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -168,6 +167,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('default', ['jshint', 'compass:dev']);
-    grunt.registerTask('build', ['requirejs:demo_core', 'requirejs:demo_core_as_build_dep', 'requirejs:demo_app', 'compass:dist']);
+    grunt.registerTask('build', ['requirejs:demo_plugins', 'requirejs:demo_core', 'requirejs:demo_core_as_build_dep', 'requirejs:demo_app', 'compass:dist']);
 
 };
