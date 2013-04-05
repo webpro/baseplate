@@ -18,10 +18,26 @@ module.exports = function(grunt) {
                     baseUrl: 'src/core-demo',
                     out: 'dist/core-demo/core.min.js',
                     paths: {
-                        requireLib: '../lib/requirejs/require'
+                        requireLib: '../lib/requirejs/require',
+                        plugins: '../../dist/core-demo/core.rjs-plugins'
                     },
-                    include: ['requireLib', 'text', 'hgn'],
+                    include: ['requireLib', 'plugins'],
+                    excludeShallow: ['main'],
                     optimize: 'uglify2',
+                    inlineText: true,
+                    onBuildRead: function(moduleName, path, contents) {
+                        return contents.replace(/console\.(.*)/g, '');
+                    }
+                }
+            },
+            demo_plugins: {
+                options: {
+                    name: 'plugins',
+                    mainConfigFile: 'src/core-demo/plugins.js',
+                    baseUrl: 'src/core-demo',
+                    out: 'dist/core-demo/core.rjs-plugins.js',
+                    excludeShallow: ['plugins'],
+                    optimize: 'none',
                     inlineText: true,
                     onBuildRead: function(moduleName, path, contents) {
                         return contents.replace(/console\.(.*)/g, '');
@@ -36,15 +52,15 @@ module.exports = function(grunt) {
                     dir: 'dist/app-demo',
                     skipDirOptimize: true,
                     optimizeCss: 'none',
+                    deps: ['../../dist/core-demo/core.noplugin'],
                     paths: {
-                        text: '../lib/requirejs-text/text',
-                        hgn: '../rjs-plugin/requirejs-hogan/hogan',
-                        hogan: '../lib/hogan/web/builds/2.0.0/hogan-2.0.0.min.amd'
+                        text: '../../dist/core-demo/core.rjs-plugins',
+                        hgn: '../../dist/core-demo/core.rjs-plugins',
+                        hogan: '../../dist/core-demo/core.rjs-plugins'
                     },
-                    deps: ['text', 'hgn', '../../dist/core-demo/core'],
                     modules: [{
                         name: 'view/moduleA/index',
-                        exclude: ['core/proxybox', 'text', 'hgn']
+                        exclude: ['core/proxybox', 'hgn']
                     }],
                     inlineText: true,
                     onBuildRead: function(moduleName, path, contents) {
@@ -137,12 +153,21 @@ module.exports = function(grunt) {
         grunt.task.run('requirejs:demo_core')
     });
 
+    grunt.task.registerTask('requirejs:demo_core_as_build_dep', function() {
+        var out = grunt.config.get('requirejs.demo_core.options.out');
+        grunt.config.set('requirejs.demo_core.options.out', out.replace(/\.min/, '.noplugin'));
+        grunt.config.set('requirejs.demo_core.options.include', ['requireLib']);
+        grunt.config.set('requirejs.demo_core.options.optimize', 'none');
+        grunt.task.run('requirejs:demo_core');
+        grunt.task.run('requirejs:demo_plugins');
+    });
+
     grunt.loadNpmTasks('grunt-contrib-requirejs');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('default', ['jshint', 'compass:dev']);
-    grunt.registerTask('build', ['requirejs:demo_core', 'requirejs:demo_core_nomin', 'requirejs:demo_app', 'compass:dist']);
+    grunt.registerTask('build', ['requirejs:demo_core', 'requirejs:demo_core_as_build_dep', 'requirejs:demo_app', 'compass:dist']);
 
 };
