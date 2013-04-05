@@ -15,7 +15,7 @@ Module loader | RequireJS
 Module builder | RequireJS Optimizer
 Package manager | npm & Bower
 Build framework | grunt
-Test runner | Testem or Testacular
+Test runner | Testem or Karma
 Test framework | Jasmine
 JS Stack | Lo-dash, Backbone, jQuery
 CSS Preprocessor | SASS, Compass
@@ -45,7 +45,7 @@ Got [Node](http://nodejs.org/) and [npm](https://github.com/isaacs/npm) installe
     npm install -g bower
     npm install -g grunt-cli
     npm install -g testem
-    npm install -g testacular
+    npm install -g karma
     npm install -g kss
     gem install sass compass
 
@@ -114,13 +114,13 @@ See testem docs for more options, e.g. to run tests in [browserstack](https://gi
 
     testem ci -l phantomjs
 
-#### Testacular
+#### Karma
 
-[Testacular](http://testacular.github.com/0.6.0/index.html) works similar to testem, and the command to watch files for changes and run the tests automatically in configured browsers is straightforward:
+[Karma](http://karma-runner.github.com/0.8/index.html) (previously Testacular) works similar to testem, and the command to watch files for changes and run the tests automatically in configured browsers is straightforward:
 
-    testacular start
+    karma start
 
-There is a code coverage reporter configured already, which gets saved in the `/coverage` folder after running tests. Also see the [using it](https://github.com/testacular/testacular#using-it) section in the Testacular docs, and the Testacular [configuration file](testacular.conf.js).
+There is a code coverage reporter configured already, which gets saved in the `/coverage` folder after running tests. Also see the [using it](https://github.com/karma-runner/karma#using-it) section in the Karma docs, and the Karma [configuration file](karma.conf.js).
 
 #### Behavior tests
 

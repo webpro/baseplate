@@ -1,4 +1,4 @@
-(function(require, testacular) {
+(function(require, karma) {
 
     require.config({
         baseUrl: '/base/src/app-demo',
@@ -8,7 +8,7 @@
         deps: [
             '../../test/specs/model/modelA.spec'
         ],
-        callback: testacular.start
+        callback: karma.start
     });
 
-})(window.require, window.__testacular__);
+})(window.require, window.__karma__);

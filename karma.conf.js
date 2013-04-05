@@ -13,7 +13,7 @@ files = [
     REQUIRE,
     REQUIRE_ADAPTER,
     'dist/core-demo/core.min.js',
-    'test/main-testacular.js',
+    'test/main-karma.js',
     {pattern: 'src/**/*.js', included: false},
     {pattern: 'test/**/*.js', included: false}
 ];
