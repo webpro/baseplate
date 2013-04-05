@@ -21,14 +21,20 @@ JS Stack | Lo-dash, Backbone, jQuery
 CSS Preprocessor | SASS, Compass
 Styleguide generator | kss-node
 
-The bare application is based on the above. Another demo application also includes:
+The bare application is based on the above. This could be a start for a full SPA.
+
+Another demo application also includes:
 
 Element | Solution
 --- | ---
 Template engine | Hogan.js
 Async helper | when.js
+Backbone data-binding | backbone.stickit
+RequireJS plugins | text, hogan
 
-Application modules are wired together using a small, custom application (see [demo app](#demo-app) for more details).
+This application setup allows for a layered build (i.e. optimizing one core and separate application modules).
+
+Application modules are lazy loaded using a little bit of progressive enhancement and bootstrapping (see [demo app](#demo-app) for more details). You are encouraged to develop your own mechanism here, or use e.g. wire.js.
 
 The [third demo app](#cujo) is using cujo's wire.js to wire the modules together.
 
@@ -67,13 +73,18 @@ To build using the `r.js` optimizer and with minified CSS:
 
     grunt build
 
-The build configuration is set up to build:
+This build configuration is set up to build the demo application:
 
 * one minified JS file for the 3rd-party libraries plus application core
 * one minified JS file for each application module
 * one minified CSS file
 
-The optimized application is built to `/dist` (and runs at `/dist/index.html`).
+The resources are built to `/dist` (demo app runs at `/dist/app-demo/index.html`).
+
+The other scenarios have their own build targets:
+
+    grunt requirejs:bare
+    grunt requirejs:cujo
 
 #### Watcher
 
@@ -127,24 +138,23 @@ With documentation in-line in the SCSS, a styleguide can easily be generated wit
 
 ### demo
 
-The baseplate demo application is an example setup. Everything described above (build, test, etc.) is run on this demo app. This really is a basic, example setup and not ready for complex SPA's. Having said that, it has some interesting ideas/features:
+The baseplate demo application is an example setup. Everything described above (build, test, etc.) is run on this demo app. Some custom concepts include:
 
-* Smart [AMD configuration](src/app-demo/main.js) (also in bare app), supporting:
-  * default usage (like ```<script data-main="main" src="require.js"></script>```)
-  * extension by other configurations ([main-dev.js](src/app-demo/main-dev.js)), e.g. to load non-minified libraries.
-  * reuse by the r.js configuration (in Gruntfile)
-* A [proxybox](src/app-demo/core/proxybox.js) module, a "sandbox" for [modules](src/app-demo/view/moduleA/index.js) to use the libraries and build upon.
-  * It just proxies `$`, `_`, `Backbone`, and `when` to make them easily accessible with one dependency.
+* Separation of core and application modules, including a build process that optimizes for this scenario, e.g.:
+  * Load the core on each page, and additionally specific application module(s).
+  * Load the core, and lazy load application modules (e.g. based on configuration or DOM structure which is unknown upfront so impossible to optimize for into one build file).
+* A [sandbox](src/core-demo/core/sandbox.js) module, a simple proxy for [application module](src/app-demo/view/moduleA/index.js)s to use the libraries and build upon.
+  * E.g. `$`, `_`, `Backbone`, and `when` are made available with one dependency.
   * This idea can be modified/extended to e.g. create abstractions, adapters, facades, you name it.
-* A [core module](src/app-demo/core/view.manager.js) which lazy-loads and installs AMD modules declared in the markup.
+* A progressive enhancement [mechanism](src/app-demo/core/view.manager.js) which lazy loads and installs AMD modules declared in the markup.
   * E.g. ```<div data-view-type="view/moduleA/index"></div>```.
-* Few example modules to extend/adapt core libraries, including:
-  * [configure Lo-Dash](src/app-demo/core/lib/lodash.js)'s template interpolation (i.e. use `hello {name}` instead of `hello <%= name %>`)
-  * [extend Backbone](src/app-demo/core/lib/backbone.js) with [backbone.stickit](http://nytimes.github.com/backbone.stickit/).
-* Minimal [Backbone.Model](src/app-demo/model/modelA.js) and [Backbone.View](src/app-demo/view/moduleA/index.js) examples, including [unit](test/specs/model/modelA.spec.js) and [behavior](test/behavior/moduleA.behavior.js) test.
+* Some example modules to extend/adapt core libraries, including:
+  * [Configure Lo-Dash](src/core-demo/core/lodash.js)'s template interpolation (i.e. use `hello {name}` instead of `hello <%= name %>`)
+  * Extend Backbone with [backbone.stickit](http://nytimes.github.com/backbone.stickit/).
+* Minimal [Backbone.View](src/app-demo/view/moduleA/index.js) and [Backbone.Model](src/app-demo/view/moduleA/modelA.js) examples, including [unit](test/specs/model/modelA.spec.js) and [behavior](test/behavior/moduleA.behavior.js) test.
 * Some example SCSS files, including:
-  * [demo comments](src/scss/component/_media.scss) to generate a styleguide
-  * a hidden gem: an awesome [grid system](src/scss/_grid.scss) (alpha).
+  * [Demo comments](src/scss/component/_media.scss) to generate a styleguide
+  * A hidden gem: an awesome [grid system](src/scss/_grid.scss) (alpha).
 
 ### cujo
 
