@@ -6,8 +6,8 @@ define('main', ['curl'], function (curl) {
 
         paths: {
             jquery: '../lib/jquery/jquery.min',
-            lodash: '../lib/lodash/lodash',
-            underscore: '../lib/lodash/lodash',
+            lodash: '../lib/lodash/dist/lodash.min',
+            underscore: '../lib/lodash/dist/lodash.min',
             text: '../lib/requirejs-text/text'
         },
 

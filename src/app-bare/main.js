@@ -11,7 +11,7 @@ require.config({
     },
     paths: {
         'jquery': '../lib/jquery/jquery.min',
-        'lodash': '../lib/lodash/lodash.min',
+        'lodash': '../lib/lodash/dist/lodash.min',
         'backbone': '../lib/backbone/backbone-min'
     }
 });
