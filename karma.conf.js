@@ -12,7 +12,7 @@ files = [
     JASMINE_ADAPTER,
     REQUIRE,
     REQUIRE_ADAPTER,
-    'dist/core-demo/core.min.js',
+    'src/app-demo/main.js',
     'test/main-karma.js',
     {pattern: 'src/**/*.js', included: false},
     {pattern: 'test/**/*.js', included: false}
