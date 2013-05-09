@@ -1,11 +1,9 @@
 define([
-    'utils',
+    'backbone',
+    'lodash',
     'model/modelA',
     'text!./template.html'
-], function(utils, ModelA, template) {
-
-    var Backbone = utils.Backbone,
-        _ = utils._;
+], function(Backbone, _, ModelA, template) {
 
     var compiledTemplate = _.template(template);
 

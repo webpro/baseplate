@@ -1,6 +1,4 @@
-define(['utils'], function(utils) {
-
-    var Backbone = utils.Backbone;
+define(['backbone'], function(Backbone) {
 
     return Backbone.Model.extend({
 
