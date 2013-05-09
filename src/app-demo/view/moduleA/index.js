@@ -1,10 +1,8 @@
 define([
-    'core/sandbox',
+    'backbone',
     './modelA',
     'hgn!./template.html'
-], function(sandbox, ModelA, template) {
-
-    var Backbone = sandbox.Backbone;
+], function(Backbone, ModelA, template) {
 
     return Backbone.View.extend({
 

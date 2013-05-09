@@ -2,54 +2,21 @@
 <html>
     <head>
         <title>baseplate - demo</title>
-        <link rel="stylesheet" href="../../dist/css/all.css">
     </head>
     <body>
 
-        <div class="wrapper">
+        <p><a href="https://github.com/webpro/baseplate">https://github.com/webpro/baseplate</a></p>
 
-            <!-- header -->
-            <div class="grid">
-                <div class="unit-3-4">
-                    <p>baseplate</p>
-                </div>
-                <div class="unit-1-4">
-                    <p><a href="https://github.com/webpro/baseplate">github</a></p>
-                </div>
-            </div>
+        <div data-moduleId="view/moduleA/index"></div>
 
-            <!-- navigation -->
-            <nav>
-                <ul class="horizontal-list">
-                    <li><a href="#" class="nav-link">NavItem 1</a></li>
-                    <li><a href="#" class="nav-link">NavItem 2</a></li>
-                    <li><a href="#" class="nav-link">NavItem 3</a></li>
-                </ul>
-            </nav>
-
-            <!-- main -->
-            <div class="grid">
-
-                <div class="unit-1-2">
-
-                    <div data-view-type="view/moduleA/index"></div>
-
-                </div>
-
-                <div class="unit-1-2">
-
-                    <div data-view-type="view/moduleA/index"></div>
-
-                </div>
-
-            </div>
-        </div>
-
-        <!-- DEV/DEBUG (use "main-dev" to use non-minified libs) -->
-        <script src="../../dist/core-demo/core.min.js"></script>
+        <script src="../lib/requirejs/require.js"></script>
         <script>
-            require(['core/bootstrap', 'main'], function(bootstrap) {
-                bootstrap();
+            require(['main'], function() {
+                Array.prototype.forEach.call(document.querySelectorAll('[data-moduleId]'), function(element) {
+                    require([element.getAttribute('data-moduleId')], function(ModuleDefinition) {
+                        new ModuleDefinition({el: element});
+                    });
+                });
             });
         </script>
 
