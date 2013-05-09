@@ -2,7 +2,7 @@
 
 ## Intro
 
-The baseplate project is a baseline/boilerplate setup to quickly get up and running. It targets non-trivial modular SPA's, and includes basic configuration for development, build, and testing.
+The baseplate project is a baseline/boilerplate setup to quickly get up and running. It _targets_ non-trivial modular SPA's, and includes basic configuration for development, build, and testing.
 
 ## Overview
 
@@ -34,9 +34,9 @@ RequireJS plugins | text, hogan
 
 This application setup allows for a layered build (i.e. optimizing one core and separate application modules).
 
-Application modules are lazy loaded using a little bit of progressive enhancement and bootstrapping (see [demo app](#demo-app) for more details). You are encouraged to develop your own mechanism here, or use e.g. wire.js.
+Application modules can be lazy loaded using a bit of progressive enhancement and dependency injection.
 
-The [third demo app](#cujo) is using cujo's wire.js to wire the modules together.
+The [third demo app](#cujo) is using cujoJS's curl.js and wire.js to wire the modules together.
 
 ## Installation
 
@@ -71,20 +71,20 @@ The baseplate has a [Gruntfile.js](Gruntfile.js) (for [grunt-cli](https://github
 
 To build using the `r.js` optimizer and with minified CSS:
 
-    grunt build
+    grunt requirejs:demo
 
 This build configuration is set up to build the demo application:
 
 * one minified JS file for the 3rd-party libraries plus application core
 * one minified JS file for each application module
-* one minified CSS file
 
 The resources are built to `/dist` (demo app runs at `/dist/app-demo/index.html`).
 
-The other scenarios have their own build targets:
+The "bare" scenario has its own build target:
 
     grunt requirejs:bare
-    grunt requirejs:cujo
+
+The "cujo" setup doesn't have a build process (yet).
 
 #### Watcher
 
@@ -136,29 +136,7 @@ With documentation in-line in the SCSS, a styleguide can easily be generated wit
 
 ## Demonstration apps
 
-### demo
-
-The baseplate demo application is an example setup. Everything described above (build, test, etc.) is run on this demo app. Some custom concepts include:
-
-* Separation of core and application modules, including a build process that optimizes for this scenario, e.g.:
-  * Load the core on each page, and additionally specific application module(s).
-  * Load the core, and lazy load application modules (e.g. based on configuration or DOM structure which is unknown upfront so impossible to optimize for into one build file).
-* A [sandbox](src/core-demo/core/sandbox.js) module, a simple proxy for [application module](src/app-demo/view/moduleA/index.js)s to use the libraries and build upon.
-  * E.g. `$`, `_`, `Backbone`, and `when` are made available with one dependency.
-  * This idea can be modified/extended to e.g. create abstractions, adapters, facades, you name it.
-* A progressive enhancement [mechanism](src/app-demo/core/view.manager.js) which lazy loads and installs AMD modules declared in the markup.
-  * E.g. ```<div data-view-type="view/moduleA/index"></div>```.
-* Some example modules to extend/adapt core libraries, including:
-  * [Configure Lo-Dash](src/core-demo/core/lodash.js)'s template interpolation (i.e. use `hello {name}` instead of `hello <%= name %>`)
-  * Extend Backbone with [backbone.stickit](http://nytimes.github.com/backbone.stickit/).
-* Minimal [Backbone.View](src/app-demo/view/moduleA/index.js) and [Backbone.Model](src/app-demo/view/moduleA/modelA.js) examples, including [unit](test/specs/model/modelA.spec.js) and [behavior](test/behavior/moduleA.behavior.js) test.
-* Some example SCSS files, including:
-  * [Demo comments](src/scss/component/_media.scss) to generate a styleguide
-  * A hidden gem: an awesome [grid system](src/scss/_grid.scss) (alpha).
-
-### cujo
-
-Similar to the demo app, but [using](src/app-cujo/context/app.js) cujo's [wire.js](https://github.com/cujojs/wire) to [load and instantiate](src/app-cujo/view/moduleA/spec.js) modules declared in the markup. Also includes a [wire! plugin](src/app-cujo/lib/wire-amd-builder.js) for RequireJS optimized builds.
+It's not about the apps.
 
 ## Outro
 
@@ -174,4 +152,4 @@ Too many to mention.. All the awesome people behind all the open source goodness
 
 ## Todo
 
-* Further optimize build by replacing require.js with a smaller loader (and concatenate with built main.js). Since [almond](https://github.com/jrburke/almond) doesn't support dynamic loading of AMD modules, we need something else (e.g. [curl.js](https://github.com/cujojs/curl)).
+* Stop creating todo lists.
