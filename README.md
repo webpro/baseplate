@@ -16,7 +16,7 @@ Module builder | RequireJS Optimizer
 Package manager | npm & Bower
 Build framework | grunt
 Test runner | Testem or Karma
-Test framework | Jasmine
+Test framework | Jasmine or Mocha
 JS Stack | Lo-dash, Backbone, jQuery
 CSS Preprocessor | SASS, Compass
 Styleguide generator | kss-node
@@ -102,7 +102,7 @@ Alternatively, use `compass compile` from the root (configured by [config.rb](co
 
 ### Test
 
-The baseplate works with [Jasmine](http://pivotal.github.com/jasmine/) out of the box. Just start writing tests (and add them to the [test config](test/main-test.js)), and run them in the browser at `/test`.
+The baseplate works with [Jasmine](http://pivotal.github.com/jasmine/) out of the box. Just start writing tests (and add them to the [test config](test/jasmine/require.config.js)), and run them in the browser at `/test`. As an alternative, [Mocha](http://visionmedia.github.io/mocha/) (plus [Chai](http://chaijs.com/)) is also available.
 
 #### Testem
 
@@ -114,6 +114,10 @@ See testem docs for more options, e.g. to run tests in [browserstack](https://gi
 
     testem ci -l phantomjs
 
+To run tests using Mocha (instead of Jasmine):
+
+    testem -f test/mocha/testem.json
+
 #### Karma
 
 [Karma](http://karma-runner.github.com/0.8/index.html) (previously Testacular) works similar to testem, and the command to watch files for changes and run the tests automatically in configured browsers is straightforward:
@@ -121,6 +125,10 @@ See testem docs for more options, e.g. to run tests in [browserstack](https://gi
     karma start
 
 There is a code coverage reporter configured already, which gets saved in the `/coverage` folder after running tests. Also see the [using it](https://github.com/karma-runner/karma#using-it) section in the Karma docs, and the Karma [configuration file](karma.conf.js).
+
+To run tests using Mocha (instead of Jasmine):
+
+    karma start test/mocha/karma.conf.js
 
 #### Behavior tests
 
