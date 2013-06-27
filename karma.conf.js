@@ -12,10 +12,9 @@ files = [
     JASMINE_ADAPTER,
     REQUIRE,
     REQUIRE_ADAPTER,
-    'src/app-demo/main.js',
-    'test/jasmine/require.config.karma.js',
     {pattern: 'src/**/*.js', included: false},
-    {pattern: 'test/**/*.js', included: false}
+    {pattern: 'test/specs/**/*.js', included: false},
+    'test/jasmine/require.config.karma.js'
 ];
 
 preprocessors = {

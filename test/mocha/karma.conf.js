@@ -13,11 +13,9 @@ files = [
     REQUIRE,
     REQUIRE_ADAPTER,
     {pattern: 'src/lib/chai/chai.js', included: false},
-    'src/app-demo/main.js',
-    'test/mocha/require.config.js',
-    'test/mocha/require.config.karma.js',
     {pattern: 'src/**/*.js', included: false},
-    {pattern: 'test/mocha/specs/**/*.js', included: false}
+    {pattern: 'test/mocha/specs/**/*.js', included: false},
+    'test/mocha/require.config.karma.js'
 ];
 
 preprocessors = {

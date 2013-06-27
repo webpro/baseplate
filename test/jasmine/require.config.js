@@ -1,9 +1,8 @@
 require(['../../src/app-demo/main'], function() {
-
     require.config({
         baseUrl: '../../src/app-demo',
         paths: {
-            'specs': '../../test/specs'
+            specs: '../../test/specs'
         },
         deps: [
             'specs/model/modelA.spec'
