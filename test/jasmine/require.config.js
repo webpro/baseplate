@@ -1,7 +1,7 @@
-require(['../src/app-demo/main'], function() {
+require(['../../src/app-demo/main'], function() {
 
     require.config({
-        baseUrl: '../src/app-demo',
+        baseUrl: '../../src/app-demo',
         paths: {
             'specs': '../../test/specs'
         },
@@ -14,5 +14,4 @@ require(['../src/app-demo/main'], function() {
             env.execute();
         }
     });
-
 });
