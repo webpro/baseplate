@@ -10,7 +10,11 @@ require(['../../src/app-demo/main'], function() {
         ],
         callback: function() {
             mocha.setup('bdd');
-            mocha.run();
+            if(window.mochaPhantomJS) {
+                mochaPhantomJS.run();
+            } else {
+                mocha.run();
+            }
         }
     });
 });
