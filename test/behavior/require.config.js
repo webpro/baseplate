@@ -6,7 +6,8 @@ require(['../../src/app-demo/main'], function() {
             'behaviors': '../../test/behavior'
         },
         deps: [
-            'behaviors/moduleA.behavior'
+            'behaviors/moduleA.behavior',
+            'behaviors/moduleB.behavior'
         ],
         callback: function() {
             var env = jasmine.getEnv();
