@@ -110,13 +110,14 @@ Tests can be watched and executed automatically in connected browsers with [test
 
     testem
 
-See testem docs for more options, e.g. to run tests in [browserstack](https://github.com/airportyh/testem/tree/master/examples/browserstack). Or [PhantomJS](https://github.com/airportyh/testem#phantomjs):
+See testem docs for more options, e.g. to run tests in [browserstack](https://github.com/airportyh/testem/tree/master/examples/browserstack). Or open and close browsers automatically in CI mode (e.g. Chrome, Firefox, and [PhantomJS](https://github.com/airportyh/testem#phantomjs)):
 
-    testem ci -l phantomjs
+    testem ci
 
 To run tests using Mocha (instead of Jasmine):
 
     testem -f test/mocha/testem.json
+    testem ci -f test/mocha/testem.json
 
 #### Karma
 
@@ -132,9 +133,10 @@ To run tests using Mocha (instead of Jasmine):
 
 #### Behavior tests
 
-There is some highly experimental behavior testing setup in the `/test/behavior` folder. Essentially, it's Jasmine + jQuery + [jasmine-jquery](https://github.com/velesin/jasmine-jquery). Run the tests in the browser at `/test/behavior`, or:
+There is some highly experimental behavior testing setup in the `/test/jasmine-behavior` folder. Essentially, it's Jasmine + jQuery + [jasmine-jquery](https://github.com/velesin/jasmine-jquery). Run the tests in the browser at `/test/jasmine-behavior`, or from CLI:
 
-    testem -t test/behavior/index.html
+    testem -t test/jasmine-behavior/index.html
+    testem ci -t test/jasmine-behavior/index.html
 
 ### Styleguide
 

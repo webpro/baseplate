@@ -14,5 +14,5 @@
 			"protocol": "browser"
 		}
     },
-    "launch_in_ci": []
+    "launch_in_ci": ["Chrome", "Firefox", "PhantomJS"]
 }
