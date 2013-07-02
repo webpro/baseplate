@@ -6,7 +6,7 @@ require(['base/src/app-demo/main'], function() {
             specs: '../../test/mocha/specs'
         },
         deps: [
-            'specs/model/modelA.spec'
+            'specs/modelA.spec'
         ],
         callback: window.__karma__.start
     });

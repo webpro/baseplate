@@ -3,7 +3,7 @@ require(['../../src/app-demo/main'], function() {
     require.config({
         baseUrl: '../../src/app-demo',
         paths: {
-            'behaviors': '../../test/behavior/specs'
+            'behaviors': '../../test/jasmine-behavior/specs'
         },
         deps: [
             'behaviors/moduleA.behavior',

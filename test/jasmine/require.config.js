@@ -2,10 +2,10 @@ require(['../../src/app-demo/main'], function() {
     require.config({
         baseUrl: '../../src/app-demo',
         paths: {
-            specs: '../../test/specs'
+            specs: '../../test/jasmine/specs'
         },
         deps: [
-            'specs/model/modelA.spec'
+            'specs/modelA.spec'
         ],
         callback: function() {
             var env = jasmine.getEnv();

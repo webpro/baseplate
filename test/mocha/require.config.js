@@ -6,7 +6,7 @@ require(['../../src/app-demo/main'], function() {
             specs: '../../test/mocha/specs'
         },
         deps: [
-            'specs/model/modelA.spec'
+            'specs/modelA.spec'
         ],
         callback: function() {
             mocha.setup('bdd');

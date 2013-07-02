@@ -13,7 +13,7 @@ files = [
     REQUIRE,
     REQUIRE_ADAPTER,
     {pattern: 'src/**/*.js', included: false},
-    {pattern: 'test/specs/**/*.js', included: false},
+    {pattern: 'test/jasmine/specs/**/*.js', included: false},
     'test/jasmine/require.config.karma.js'
 ];
 
