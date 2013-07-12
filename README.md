@@ -1,8 +1,6 @@
 # baseplate
 
-## Intro
-
-The baseplate project is a baseline/boilerplate setup to quickly get this up and running: tooling configuration for development, build, and testing non-trivial SPAs.
+The baseplate project provides excellent workflow & tooling to develop, build, and test non-trivial SPAs. Check out the stack below to see if it's for you.
 
 ## Overview
 
@@ -145,18 +143,6 @@ With documentation in-line in the SCSS, a styleguide can easily be generated wit
 
     compass compile && kss-node src/scss styleguide --css dist/css/all.css
 
-## Outro
-
-The bottom line: the better your desired setup resembles, the more useful this baseplate is.
-
-## License
-
-What?
-
 ## Credits
 
 Too many to mention.. All the awesome people behind all the open source goodness that is used in this project: thank you!
-
-## Todo
-
-* Stop creating todo lists.
