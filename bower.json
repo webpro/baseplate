@@ -19,6 +19,7 @@
         "jasmine-jquery": "*",
         "mocha": "1.9.0",
         "chai": "~1.7",
-        "expect": "~0.2.0"
+        "expect": "~0.2.0",
+        "sinon": "~1.7.3"
     }
 }
