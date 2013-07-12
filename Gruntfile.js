@@ -25,6 +25,9 @@ module.exports = function(grunt) {
                     }, {
                         name: 'view/moduleA/index',
                         exclude: ['backbone', 'hgn']
+                    }, {
+                        name: 'view/moduleB/index',
+                        exclude: ['backbone', 'hgn', 'backbone.stickit']
                     }],
                     inlineText: true,
                     onBuildRead: function(moduleName, path, contents) {
