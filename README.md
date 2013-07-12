@@ -131,6 +131,10 @@ To run tests using Mocha (instead of Jasmine):
 
     karma start test/mocha/karma.conf.js
 
+#### Intern
+
+Some experimental browser testing using the Intern test stack is working at `/test/intern/?config=../../test/intern/intern.config`. Does not work in IE8 (IE9 is fine).
+
 #### Behavior tests
 
 There is some highly experimental behavior testing setup in the `/test/jasmine-behavior` folder. Essentially, it's Jasmine + jQuery + [jasmine-jquery](https://github.com/velesin/jasmine-jquery). Run the tests in the browser at `/test/jasmine-behavior`, or from CLI:
