@@ -46,6 +46,7 @@ Got [Node](http://nodejs.org/) and [npm](https://github.com/isaacs/npm) installe
     npm install -g grunt-cli
     npm install -g testem
     npm install -g karma
+    npm install -g intern
     npm install -g kss
     gem install sass compass
 
