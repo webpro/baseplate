@@ -142,6 +142,11 @@ There is some highly experimental behavior testing setup in the `/test/jasmine-b
     testem -t test/jasmine-behavior/index.html
     testem ci -t test/jasmine-behavior/index.html
 
+Additionally, the same concept is configured using Mocha and expect.js:
+
+    testem -t test/mocha-behavior/index.html
+    testem ci -t test/mocha-behavior/index.html
+
 ### Styleguide
 
 With documentation in-line in the SCSS, a styleguide can easily be generated with [kss-node](https://github.com/hughsk/kss-node):
