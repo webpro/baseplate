@@ -116,7 +116,7 @@ See testem docs for more options, e.g. to run tests in [browserstack](https://gi
 
 To run tests using Mocha (instead of Jasmine):
 
-    testem -f test/mocha/testem.json
+    testem -t test/mocha/index.html
     testem ci -f test/mocha/testem.json
 
 #### Karma
