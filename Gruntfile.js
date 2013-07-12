@@ -3,12 +3,12 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         requirejs: {
-            demo: {
+            config: {
                 options: {
-                    appDir: 'src/app-demo',
-                    mainConfigFile: 'src/app-demo/main.js',
+                    appDir: 'src',
+                    mainConfigFile: 'src/main.js',
                     baseUrl: '.',
-                    dir: 'dist/app-demo',
+                    dir: 'dist/',
                     skipDirOptimize: true,
                     optimizeCss: 'none',
                     modules: [{
@@ -20,11 +20,7 @@ module.exports = function(grunt) {
                     }, {
                         name: 'view/moduleB/index',
                         exclude: ['backbone', 'hgn', 'backbone.stickit']
-                    }],
-                    inlineText: true,
-                    onBuildRead: function(moduleName, path, contents) {
-                        return contents.replace(/console\.(.*)/g, '');
-                    }
+                    }]
                 }
             }
         },
@@ -32,7 +28,7 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: [
-                    'src/app-demo/**/*.js'
+                    'src/**/*.js'
                 ],
                 tasks: ['jshint']
             },
@@ -46,7 +42,7 @@ module.exports = function(grunt) {
 
         jshint: {
             files: [
-                'js/app-demo/**/*.js'
+                'js/**/*.js'
             ],
             options: {
                 eqeqeq: true,
@@ -63,6 +59,7 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     environment: 'production',
+                    cssDir: 'dist/css',
                     force: true,
                     config: 'config.rb',
                     outputStyle: 'compressed',
@@ -78,5 +75,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('default', ['jshint', 'compass:dev']);
+    grunt.registerTask('build', ['requirejs:config']);
 
 };

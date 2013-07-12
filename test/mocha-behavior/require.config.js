@@ -1,9 +1,8 @@
-require(['../../src/app-demo/main'], function() {
+require(['../../src/main'], function() {
     require.config({
-        baseUrl: '../../src/app-demo',
+        baseUrl: '../../src',
         paths: {
-            chai: '../../src/lib/chai/chai',
-            behaviors: '../../test/mocha-behavior/specs'
+            behaviors: '../test/mocha-behavior/specs'
         },
         deps: [
             'behaviors/moduleA.behavior',

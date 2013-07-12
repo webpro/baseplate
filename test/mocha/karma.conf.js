@@ -19,7 +19,7 @@ files = [
 ];
 
 preprocessors = {
-    '**/src/app-demo/**/*.js': 'coverage'
+    '**/src/**/*.js': 'coverage'
 };
 
 coverageReporter = {

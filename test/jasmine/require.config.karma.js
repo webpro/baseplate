@@ -1,8 +1,8 @@
-require(['base/src/app-demo/main'], function() {
+require(['base/src/main'], function() {
     require.config({
-        baseUrl: '/base/src/app-demo',
+        baseUrl: '/base/src',
         paths: {
-            specs: '../../test/jasmine/specs'
+            specs: '../test/jasmine/specs'
         },
         deps: [
             'specs/modelA.spec'

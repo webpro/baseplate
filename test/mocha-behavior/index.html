@@ -2,23 +2,23 @@
 <html>
 	<head>
 		<title>baseplate - behavior tests (Mocha)</title>
-        <link rel="stylesheet" href="../../src/lib/mocha/mocha.css"/>
-        <script src="../../src/lib/mocha/mocha.js"></script>
-        <script src="../../src/lib/expect/expect.js"></script>
+        <link rel="stylesheet" href="../../lib/mocha/mocha.css"/>
+        <script src="../../lib/mocha/mocha.js"></script>
+        <script src="../../lib/expect/expect.js"></script>
 		<script>
             mocha.setup('bdd');
 			if(location.hash === '#testem')
 				document.write('<script src="/testem.js"></' + 'script>')
 		</script>
-		<script src="../../src/lib/jquery/jquery.min.js"></script>
-		<script src="../../src/lib/sinon/lib/sinon.js"></script>
-		<script src="../../src/lib/sinon/lib/sinon/call.js"></script>
-		<script src="../../src/lib/sinon/lib/sinon/spy.js"></script>
+		<script src="../../lib/jquery/jquery.min.js"></script>
+		<script src="../../lib/sinon/lib/sinon.js"></script>
+		<script src="../../lib/sinon/lib/sinon/call.js"></script>
+		<script src="../../lib/sinon/lib/sinon/spy.js"></script>
 	</head>
 	<body>
 		<h1>baseplate - behavior tests (Mocha)</h1>
         <div id="mocha"></div>
-        <script src="../../src/lib/requirejs/require.js"></script>
+        <script src="../../lib/requirejs/require.js"></script>
         <script src="require.config.js"></script>
 	</body>
 </html>

@@ -1,8 +1,8 @@
-require(['../../src/app-demo/main'], function() {
+require(['../../src/main'], function() {
     require.config({
-        baseUrl: '../../src/app-demo',
+        baseUrl: '../../src',
         packages: [
-            { name: 'intern', location: '../../node_modules/intern' }
+            { name: 'intern', location: '../node_modules/intern' }
         ],
         map: {
             intern: {
@@ -11,7 +11,7 @@ require(['../../src/app-demo/main'], function() {
             }
         },
         paths: {
-            specs: '../../test/intern/specs'
+            specs: '../test/intern/specs'
         },
         deps: ['intern/client']
     });

@@ -1,9 +1,9 @@
-require(['../../src/app-demo/main'], function() {
+require(['../../src/main'], function() {
 
     require.config({
-        baseUrl: '../../src/app-demo',
+        baseUrl: '../../src',
         paths: {
-            'behaviors': '../../test/jasmine-behavior/specs'
+            'behaviors': '../test/jasmine-behavior/specs'
         },
         deps: [
             'behaviors/moduleA.behavior',

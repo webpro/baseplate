@@ -1,9 +1,9 @@
-require(['base/src/app-demo/main'], function() {
+require(['base/src/main'], function() {
     require.config({
-        baseUrl: '/base/src/app-demo',
+        baseUrl: '/base/src',
         paths: {
-            chai: '../../src/lib/chai/chai',
-            specs: '../../test/mocha/specs'
+            chai: '../lib/chai/chai',
+            specs: '../test/mocha/specs'
         },
         deps: [
             'specs/modelA.spec'

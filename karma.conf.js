@@ -12,13 +12,14 @@ files = [
     JASMINE_ADAPTER,
     REQUIRE,
     REQUIRE_ADAPTER,
+    {pattern: 'lib/**/*.js', included: false},
     {pattern: 'src/**/*.js', included: false},
     {pattern: 'test/jasmine/specs/**/*.js', included: false},
     'test/jasmine/require.config.karma.js'
 ];
 
 preprocessors = {
-    '**/src/app-demo/**/*.js': 'coverage'
+    '**/src/**/*.js': 'coverage'
 };
 
 coverageReporter = {

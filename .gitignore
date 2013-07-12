@@ -1,6 +1,6 @@
-src/lib
-dist
-styleguide
+/lib
+/dist
+/styleguide
 .sass-cache
-node_modules
-coverage
+/node_modules
+/coverage
