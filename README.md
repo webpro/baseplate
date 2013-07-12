@@ -2,11 +2,11 @@
 
 ## Intro
 
-The baseplate project is a baseline/boilerplate setup to quickly get up and running. It _targets_ non-trivial modular SPA's, and includes basic configuration for development, build, and testing.
+The baseplate project is a baseline/boilerplate setup to quickly get this up and running: tooling configuration for development, build, and testing non-trivial SPAs.
 
 ## Overview
 
-The base stack is opinionated (yet it should be easy to swap/ignore/remove most elements):
+The tooling stack is pretty opinionated:
 
 Element | Solution
 --- | ---
@@ -17,45 +17,42 @@ Package manager | npm & Bower
 Build framework | grunt
 Test runner | Testem or Karma
 Test framework | Jasmine or Mocha
-JS Stack | Lo-dash, Backbone, jQuery
 CSS Preprocessor | SASS, Compass
 Styleguide generator | kss-node
 
-The bare application is based on the above. This could be a start for a full SPA.
-
-Another demo application also includes:
+The example/dummy application contains the following:
 
 Element | Solution
 --- | ---
+JS Stack | Lo-dash, Backbone, jQuery
 Template engine | Hogan.js
 Async helper | when.js
 Backbone data-binding | backbone.stickit
 RequireJS plugins | text, hogan
 
-This application setup allows for a layered build (i.e. optimizing one core and separate application modules).
+This application is an example setup for a full SPA. It allows for a layered build (i.e. optimizing one core and separate application modules).
 
-Application modules can be lazy loaded using a bit of progressive enhancement and dependency injection.
-
-The [third demo app](#cujo) is using cujoJS's curl.js and wire.js to wire the modules together.
+Application modules are lazy loaded using a bit of progressive enhancement and dependency injection.
 
 ## Installation
 
-Got [Node](http://nodejs.org/) and [npm](https://github.com/isaacs/npm) installed, right? Otherwise, please do so first. Then install whatever you'd like to use:
+Got [Node](http://nodejs.org/), [npm](https://github.com/isaacs/npm), and [Bower](http://bower.io/) installed, right? Otherwise, please do so first.
 
-    npm install -g bower
-    npm install -g grunt-cli
-    npm install -g testem
-    npm install -g karma
-    npm install -g intern
-    npm install -g kss
-    gem install sass compass
+Install baseplate and its local dependencies:
 
-Then baseplate and its dependencies can be installed:
-
-    git clone git://github.com/webpro/baseplate.git
+    git clone git://github.com/webpro/baseplate
     cd baseplate
     bower install
     npm install
+
+Depending on your targets, you need to install some global dependencies:
+
+    npm install -g grunt-cli        # For build tasks
+    npm install -g testem           # For running tests
+    npm install -g karma            # Alternative for running tests
+    npm install -g intern           # Alternative alternative for running tests
+    npm install -g kss              # For creating styleguide
+    gem install sass compass        # For compiling SASS
 
 ## Content
 
@@ -72,20 +69,14 @@ The baseplate has a [Gruntfile.js](Gruntfile.js) (for [grunt-cli](https://github
 
 To build using the `r.js` optimizer and with minified CSS:
 
-    grunt requirejs:demo
+    grunt build
 
 This build configuration is set up to build the demo application:
 
 * one minified JS file for the 3rd-party libraries plus application core
 * one minified JS file for each application module
 
-The resources are built to `/dist` (demo app runs at `/dist/app-demo/index.html`).
-
-The "bare" scenario has its own build target:
-
-    grunt requirejs:bare
-
-The "cujo" setup doesn't have a build process (yet).
+The resources are built to `/dist` (demo app runs at `/dist/index.html`).
 
 #### Watcher
 
@@ -153,10 +144,6 @@ Additionally, the same concept is configured using Mocha and expect.js:
 With documentation in-line in the SCSS, a styleguide can easily be generated with [kss-node](https://github.com/hughsk/kss-node):
 
     compass compile && kss-node src/scss styleguide --css dist/css/all.css
-
-## Demonstration apps
-
-It's not about the apps.
 
 ## Outro
 
