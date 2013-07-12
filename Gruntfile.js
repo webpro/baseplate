@@ -3,14 +3,6 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         requirejs: {
-            bare: {
-                options: {
-                    name: 'main',
-                    mainConfigFile: 'src/app-bare/main.js',
-                    baseUrl: 'src/app-bare',
-                    out: 'dist/app-bare/main.js'
-                }
-            },
             demo: {
                 options: {
                     appDir: 'src/app-demo',
