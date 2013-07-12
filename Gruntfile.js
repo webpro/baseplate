@@ -6,7 +6,7 @@ module.exports = function(grunt) {
             config: {
                 options: {
                     appDir: 'src',
-                    mainConfigFile: 'src/main.js',
+                    mainConfigFile: 'src/require.config.js',
                     baseUrl: '.',
                     dir: 'dist/',
                     skipDirOptimize: true,

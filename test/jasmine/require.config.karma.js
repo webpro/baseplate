@@ -1,4 +1,4 @@
-require(['base/src/main'], function() {
+require(['base/src/require.config'], function() {
     require.config({
         baseUrl: '/base/src',
         paths: {

@@ -14,16 +14,7 @@
 
         <div data-moduleId="view/moduleB/index"></div>
 
-        <script src="../lib/requirejs/require.js"></script>
-        <script>
-            require(['main'], function() {
-                Array.prototype.forEach.call(document.querySelectorAll('[data-moduleId]'), function(element) {
-                    require([element.getAttribute('data-moduleId')], function(ModuleDefinition) {
-                        new ModuleDefinition({el: element});
-                    });
-                });
-            });
-        </script>
+        <script data-main="main" src="../lib/requirejs/require.js"></script>
 
     </body>
 </html>
