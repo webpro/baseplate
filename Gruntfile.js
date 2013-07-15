@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 
         jshint: {
             files: [
-                'js/**/*.js'
+                'src/**/*.js'
             ],
             options: {
                 eqeqeq: true,
