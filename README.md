@@ -72,7 +72,7 @@ To build using the `r.js` optimizer and with minified CSS:
 This build configuration is set up to build the demo application:
 
 * one minified JS file for the 3rd-party libraries plus application core
-* one minified JS file for each application module
+* one minified JS file for each application module (including [template precompilation](https://github.com/webpro/precompiled-templates)).
 
 The resources are built to `/dist` (demo app runs at `/dist/index.html`).
 
