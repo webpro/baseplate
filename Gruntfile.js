@@ -11,6 +11,7 @@ module.exports = function(grunt) {
                     dir: 'dist/',
                     skipDirOptimize: true,
                     optimizeCss: 'none',
+                    optimize: 'uglify2',
                     modules: [{
                         name: 'view/moduleA/index',
                         exclude: ['backbone', 'hb']
