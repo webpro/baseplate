@@ -1,7 +1,7 @@
 define([
     'backbone',
     './modelA',
-    'hgn!./template.html'
+    'hb!./template.html'
 ], function(Backbone, ModelA, template) {
 
     return Backbone.View.extend({
@@ -15,7 +15,7 @@ define([
         },
 
         render: function() {
-            this.$el.html(this.template.render(this.model.toJSON()));
+            this.$el.html(this.template(this.model.toJSON()));
         }
     });
 });

@@ -23,10 +23,10 @@ The example/dummy application contains the following:
 Element | Solution
 --- | ---
 JS Stack | Lo-dash, Backbone, jQuery
-Template engine | Hogan.js
+Template engine | Handlebars
 Async helper | when.js
 Backbone data-binding | backbone.stickit
-RequireJS plugins | text, hogan
+RequireJS plugins | text, handlebars
 
 This application is an example setup for a full SPA. It allows for a layered build (i.e. optimizing one core and separate application modules).
 

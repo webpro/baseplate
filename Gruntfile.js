@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         requirejs: {
-            config: {
+            modules: {
                 options: {
                     appDir: 'src',
                     mainConfigFile: 'src/require.config.js',
@@ -12,15 +12,24 @@ module.exports = function(grunt) {
                     skipDirOptimize: true,
                     optimizeCss: 'none',
                     modules: [{
-                        name: 'main',
-                        include: ['backbone', 'backbone.stickit', 'hgn']
-                    }, {
                         name: 'view/moduleA/index',
-                        exclude: ['backbone', 'hgn']
+                        exclude: ['backbone', 'hb']
                     }, {
                         name: 'view/moduleB/index',
-                        exclude: ['backbone', 'hgn', 'backbone.stickit']
+                        exclude: ['backbone', 'hb', 'backbone.stickit']
                     }]
+                }
+            },
+            main: {
+                options: {
+                    name: 'main',
+                    out: 'dist/main.js',
+                    mainConfigFile: 'src/require.config.js',
+                    paths: {
+                        handlebars: '../lib/handlebars/handlebars.runtime'
+                    },
+                    include: ['backbone', 'backbone.stickit', 'hb'],
+                    optimize: 'uglify2'
                 }
             }
         },
@@ -75,6 +84,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('default', ['jshint', 'compass:dev']);
-    grunt.registerTask('build', ['requirejs:config']);
+    grunt.registerTask('build', ['requirejs:modules', 'requirejs:main']);
 
 };

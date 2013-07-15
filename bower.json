@@ -9,7 +9,8 @@
         "backbone.stickit": "~0.6",
         "lodash": "~1.0",
         "when": "~1.7",
-        "hogan": "*",
+        "handlebars": "~1.0",
+        "requirejs-handlebars": "~0.0.1",
         "curl": "~0.7",
         "wire": "~0.9",
         "meld": "~1.2"

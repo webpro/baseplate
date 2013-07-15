@@ -5,8 +5,8 @@ require.config({
         backbone: '../lib/backbone/backbone-min',
         'backbone.stickit': '../lib/backbone.stickit/backbone.stickit',
         text: '../lib/requirejs-text/text',
-        hogan: '../lib/hogan/web/builds/2.0.0/hogan-2.0.0.min.amd',
-        hgn: 'rjs-plugin/requirejs-hogan/hogan'
+        handlebars: '../lib/handlebars/handlebars',
+        hb: '../lib/requirejs-handlebars/hb'
     },
     packages: [
         { name: 'when', location: '../lib/when', main: './when' }
@@ -16,6 +16,9 @@ require.config({
             deps: ['lodash', 'jquery'],
             exports: 'Backbone'
         },
-        'backbone.stickit': ['backbone']
+        'backbone.stickit': ['backbone'],
+        handlebars: {
+            exports: 'Handlebars'
+        }
     }
 });

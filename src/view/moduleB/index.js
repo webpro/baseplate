@@ -1,7 +1,7 @@
 define([
     'backbone',
     './modelB',
-    'hgn!./template.html',
+    'hb!./template.html',
     'backbone.stickit'
 ], function(Backbone, ModelB, template) {
 
@@ -26,7 +26,7 @@ define([
         },
 
         render: function() {
-            this.$el.html(this.template.render(this.model.toJSON()));
+            this.$el.html(this.template(this.model.toJSON()));
         },
 
         onSubmit: function(event) {
