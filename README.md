@@ -7,12 +7,12 @@ The baseplate project provides excellent workflow & tooling to develop, build, a
 The tooling stack is pretty opinionated:
 
 Element | Solution
---- | ---
+:-- | :--
 Module format | AMD
 Module loader | RequireJS
 Module builder | RequireJS Optimizer
 Package manager | npm & Bower
-Build framework | grunt
+Build framework | Grunt
 Test runner | Testem or Karma
 Test framework | Jasmine or Mocha
 CSS Preprocessor | SASS, Compass
@@ -21,7 +21,7 @@ Styleguide generator | kss-node
 The example/dummy application contains the following:
 
 Element | Solution
---- | ---
+:-- | :--
 JS Stack | Lo-dash, Backbone, jQuery
 Template engine | Handlebars
 Async helper | when.js
@@ -52,9 +52,9 @@ Depending on your targets, you need to install some global dependencies:
     npm install -g kss              # For creating styleguide
     gem install sass compass        # For compiling SASS
 
-## Content
+Now, let's see what we've got...
 
-### grunt
+## Grunt
 
 The baseplate has a [Gruntfile.js](Gruntfile.js) (for [grunt-cli](https://github.com/gruntjs/grunt-cli)) which is pre-configured with:
 
@@ -63,7 +63,7 @@ The baseplate has a [Gruntfile.js](Gruntfile.js) (for [grunt-cli](https://github
 * [compass](https://github.com/gruntjs/grunt-contrib-compass)
 * [watch](https://github.com/gruntjs/grunt-contrib-watch)
 
-#### Build
+### Build
 
 To build using the `r.js` optimizer and with minified CSS:
 
@@ -76,13 +76,13 @@ This build configuration is set up to build the demo application:
 
 The resources are built to `/dist` (demo app runs at `/dist/index.html`).
 
-#### Watcher
+### Watcher
 
 Changes in JS files will trigger jshint, and changes in SASS files will trigger Compass compilation for development (incl. sourcemap):
 
     grunt watch
 
-### CSS
+## CSS
 
 The baseplate contains the bare minimum for working with [SASS](http://sass-lang.com/) & [Compass](http://compass-style.org/). Compass compiles for development (incl. sourcemap), or production (compressed):
 
@@ -90,11 +90,11 @@ The baseplate contains the bare minimum for working with [SASS](http://sass-lang
 
 Alternatively, use `compass compile` from the root (configured by [config.rb](config.rb)).
 
-### Test
+## Test
 
 The baseplate works with [Jasmine](http://pivotal.github.com/jasmine/) out of the box. Just start writing tests (and add them to the [test config](test/jasmine/require.config.js)), and run them in the browser at `/test`. As an alternative, [Mocha](http://visionmedia.github.io/mocha/) (plus [Chai](http://chaijs.com/)) is also available.
 
-#### Testem
+### Testem
 
 Tests can be watched and executed automatically in connected browsers with [testem](https://github.com/airportyh/testem):
 
@@ -109,7 +109,7 @@ To run tests using Mocha (instead of Jasmine):
     testem -t test/mocha/index.html
     testem ci -f test/mocha/testem.json
 
-#### Karma
+### Karma
 
 [Karma](http://karma-runner.github.com/0.8/index.html) (previously Testacular) works similar to testem, and the command to watch files for changes and run the tests automatically in configured browsers is straightforward:
 
@@ -121,11 +121,11 @@ To run tests using Mocha (instead of Jasmine):
 
     karma start test/mocha/karma.conf.js
 
-#### Intern
+### Intern
 
 Some experimental browser testing using the Intern test stack is working at `/test/intern/?config=../../test/intern/intern.config`. Does not work in IE8 (IE9 is fine).
 
-#### Behavior tests
+### Behavior tests
 
 There is some highly experimental behavior testing setup in the `/test/jasmine-behavior` folder. Essentially, it's Jasmine + jQuery + [jasmine-jquery](https://github.com/velesin/jasmine-jquery). Run the tests in the browser at `/test/jasmine-behavior`, or from CLI:
 
@@ -137,7 +137,7 @@ Additionally, the same concept is configured using Mocha and expect.js:
     testem -t test/mocha-behavior/index.html
     testem ci -t test/mocha-behavior/index.html
 
-### Styleguide
+## Styleguide
 
 With documentation in-line in the SCSS, a styleguide can easily be generated with [kss-node](https://github.com/hughsk/kss-node):
 
