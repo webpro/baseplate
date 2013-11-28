@@ -105,8 +105,8 @@ See testem docs for more options, e.g. to run tests in [browserstack](https://gi
 
 To run tests using Mocha (instead of Jasmine):
 
-    testem -t test/mocha/index.html
-    testem ci -f test/mocha/testem.json
+    testem -t test/mocha/index.html#testem
+    testem ci -t test/mocha/index.html#testem
 
 ### Karma
 
@@ -128,13 +128,13 @@ Some experimental browser testing using the Intern test stack is working at `/te
 
 There is some highly experimental behavior testing setup in the `/test/jasmine-behavior` folder. Essentially, it's Jasmine + jQuery. Run the tests in the browser at `/test/jasmine-behavior`, or from CLI:
 
-    testem -t test/jasmine-behavior/index.html
-    testem ci -t test/jasmine-behavior/index.html
+    testem -t test/jasmine-behavior/index.html#testem
+    testem ci -t test/jasmine-behavior/index.html#testem
 
 Additionally, the same concept is configured using Mocha and expect.js:
 
-    testem -t test/mocha-behavior/index.html
-    testem ci -t test/mocha-behavior/index.html
+    testem -t test/mocha-behavior/index.html#testem
+    testem ci -t test/mocha-behavior/index.html#testem
 
 ## Styleguide
 
