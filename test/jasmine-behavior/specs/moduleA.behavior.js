@@ -4,7 +4,7 @@ define([
 
     describe('view/moduleA', function() {
 
-        var viewEl = sandbox();
+        var viewEl = document.createElement('div');
 
         var view = new ModuleA({
             el: viewEl
@@ -12,7 +12,7 @@ define([
 
         it('should instantiate view with viewEl as $el', function() {
 
-            expect(view.$el).toBe(viewEl);
+            expect(view.el).toBe(viewEl);
 
         });
 

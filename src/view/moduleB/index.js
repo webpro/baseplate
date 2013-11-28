@@ -1,8 +1,7 @@
 define([
     'backbone',
     './modelB',
-    'hb!./template.html',
-    'backbone.stickit'
+    'hb!./template.html'
 ], function(Backbone, ModelB, template) {
 
     return Backbone.View.extend({
@@ -17,17 +16,22 @@ define([
         },
 
         events: {
+			'change input[name=valueA]': 'onChange',
+			'change input[name=valueB]': 'onChange',
             'submit': 'onSubmit'
         },
 
         initialize: function() {
             this.render();
-            this.stickit();
         },
 
         render: function() {
             this.$el.html(this.template(this.model.toJSON()));
         },
+
+		onChange: function(event) {
+			this.model.set(event.target.name, event.target.value);
+		},
 
         onSubmit: function(event) {
             event.preventDefault();

@@ -4,7 +4,7 @@ define([
 
     describe('view/moduleB', function() {
 
-        var viewEl = sandbox();
+		var viewEl = document.createElement('div');
 
         var view = new ModuleB({
             el: viewEl
