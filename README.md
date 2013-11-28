@@ -25,7 +25,6 @@ Element | Solution
 JS Stack | Lo-dash, Backbone, jQuery
 Template engine | Handlebars
 Async helper | when.js
-Backbone data-binding | backbone.stickit
 RequireJS plugins | text, handlebars
 
 This application is an example setup for a full SPA. It allows for a layered build (i.e. optimizing one core and separate application modules).
@@ -127,7 +126,7 @@ Some experimental browser testing using the Intern test stack is working at `/te
 
 ### Behavior tests
 
-There is some highly experimental behavior testing setup in the `/test/jasmine-behavior` folder. Essentially, it's Jasmine + jQuery + [jasmine-jquery](https://github.com/velesin/jasmine-jquery). Run the tests in the browser at `/test/jasmine-behavior`, or from CLI:
+There is some highly experimental behavior testing setup in the `/test/jasmine-behavior` folder. Essentially, it's Jasmine + jQuery. Run the tests in the browser at `/test/jasmine-behavior`, or from CLI:
 
     testem -t test/jasmine-behavior/index.html
     testem ci -t test/jasmine-behavior/index.html
