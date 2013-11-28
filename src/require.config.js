@@ -6,7 +6,7 @@ require.config({
         backbone: '../lib/backbone/backbone',
         text: '../lib/requirejs-text/text',
         handlebars: '../lib/handlebars/handlebars.amd',
-        hb: '../lib/requirejs-handlebars/hb'
+        hb: '../lib_custom/requirejs-handlebars/hb'
     },
     packages: [
         { name: 'when', location: '../lib/when', main: './when' }
