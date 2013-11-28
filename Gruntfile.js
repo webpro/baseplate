@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                         exclude: ['backbone', 'hb']
                     }, {
                         name: 'view/moduleB/index',
-                        exclude: ['backbone', 'hb', 'backbone.stickit']
+                        exclude: ['backbone', 'hb']
                     }]
                 }
             },
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
                     paths: {
                         handlebars: '../lib/handlebars/handlebars.runtime'
                     },
-                    include: ['backbone', 'backbone.stickit', 'hb'],
+                    include: ['backbone', 'hb'],
                     optimize: 'uglify2'
                 }
             }
