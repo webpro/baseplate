@@ -1,7 +1,7 @@
 define([
     'intern!bdd',
     'intern/chai!expect',
-    'view/moduleA/modelA'
+    'src/view/moduleA/modelA'
 ], function(bdd, expect, ModelA) {
 
     with (bdd) {

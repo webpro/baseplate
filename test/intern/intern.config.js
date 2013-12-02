@@ -15,19 +15,22 @@ define({
 	// Note that the `build` capability will be filled in with the current commit ID from the Travis CI environment
 	// automatically
 	capabilities: {
-		'selenium-version': '2.30.0'
+		'selenium-version': '2.37.0'
 	},
 
 	// Browsers to run integration testing against. Note that version numbers must be strings if used with Sauce
 	// OnDemand. Options that will be permutated are browserName, version, platform, and platformVersion; any other
 	// capabilities options specified for an environment will be copied as-is
-    environments: [
-        { browserName: 'internet explorer', version: '10', platform: 'Windows 2012' },
-        { browserName: 'internet explorer', version: '9', platform: 'Windows 2008' },
-        { browserName: 'firefox', version: '19', platform: [ 'Linux', 'Mac 10.6', 'Windows 2012' ] },
-        { browserName: 'chrome', platform: [ 'Linux', 'Mac 10.8', 'Windows 2008' ] },
-        { browserName: 'safari', version: '6', platform: 'Mac 10.8' }
-    ],
+	environments: [
+		{ browserName: 'internet explorer', version: '11', platform: 'Windows 8.1' },
+		{ browserName: 'internet explorer', version: '10', platform: 'Windows 8' },
+		{ browserName: 'internet explorer', version: '9', platform: 'Windows 7' },
+		{ browserName: 'firefox', version: '25', platform: [ 'OS X 10.6', 'Windows 7', 'Linux' ] },
+		{ browserName: 'chrome', version: '31', platform: 'Windows 7' },
+		{ browserName: 'chrome', version: '30', platform: 'Linux' },
+		{ browserName: 'chrome', version: '27', platform: 'OS X 10.8' },
+		{ browserName: 'safari', version: '6', platform: 'OS X 10.8' }
+	],
 
 	// Maximum number of simultaneous integration tests that should be executed on the remote WebDriver service
 	maxConcurrency: 3,
@@ -43,19 +46,37 @@ define({
 		port: 4444
 	},
 
-	// Configuration options for the module loader; any AMD configuration options supported by the Dojo loader can be
-	// used here
+	// The desired AMD loader to use when running unit tests (client.html/client.js). Omit to use the default Dojo
+	// loader
+	useLoader: {
+		'host-node': 'requirejs',
+		'host-browser': '../../lib/requirejs/require.js'
+	},
+
+	// Configuration options for the module loader; any AMD configuration options supported by the specified AMD loader
+	// can be used here
 	loader: {
-		// Packages that should be registered with the loader in each testing environment
-		packages: []
+		waitSeconds: 30,
+		paths: {
+			jquery: 'lib/jquery/jquery.min',
+			lodash: 'lib/lodash/dist/lodash.min',
+			underscore: 'lib/lodash/dist/lodash.min',
+			backbone: 'lib/backbone/backbone',
+			text: 'lib/requirejs-text/text',
+			handlebars: 'lib/handlebars/handlebars.amd',
+			hb: 'lib_custom/requirejs-handlebars/hb'
+		},
+		packages: [
+			{ name: 'when', location: '../lib/when', main: './when' }
+		]
 	},
 
 	// Non-functional test suite(s) to run in each browser
-	suites: [ 'specs/modelA.spec' ],
+	suites: [ 'test/intern/specs/modelA.spec' ],
 
 	// Functional test suite(s) to run in each browser once non-functional tests are completed
 	functionalSuites: [ /* 'myPackage/tests/functional' */ ],
 
 	// A regular expression matching URLs to files that should not be included in code coverage analysis
-	excludeInstrumentation: /^tests\//
+	excludeInstrumentation: /^(?:lib|test)\//
 });
