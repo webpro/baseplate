@@ -8,6 +8,6 @@
         "grunt-contrib-watch": "~0.5.3",
         "grunt-contrib-jshint": "~0.7.2",
         "grunt-contrib-compass": "~0.6.0",
-        "intern": "~1.3.2"
+        "intern": "git://github.com/theintern/intern.git#master"
     }
 }
