@@ -122,7 +122,15 @@ To run tests using Mocha (instead of Jasmine):
 
 ### Intern
 
-Some experimental browser testing using the Intern test stack is working at `/test/intern/?config=../../test/intern/intern.config`. Does not work in IE8 (IE9 is fine).
+Some experimental browser testing using the Intern test stack is working, open the browser and check the console:
+
+	/node_modules/intern/client.html?config=test/intern/intern.config.js
+	
+Does not work in IE8 (IE9 is fine).
+
+To test from the command-line
+
+    ./node_modules/.bin/intern-client config=test/intern/intern.config
 
 ### Behavior tests
 
