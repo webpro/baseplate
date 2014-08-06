@@ -148,7 +148,7 @@ Additionally, the same concept is configured using Mocha and expect.js:
 
 With documentation in-line in the SCSS, a styleguide can easily be generated with [kss-node](https://github.com/hughsk/kss-node):
 
-    compass compile && kss-node src/scss styleguide --css dist/css/all.css
+    grunt compass:dist && kss-node src/scss styleguide --css dist/css/all.css
 
 ## Credits
 
