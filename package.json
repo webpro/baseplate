@@ -9,6 +9,14 @@
     "grunt-contrib-requirejs": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",
     "intern": "^2.0.1",
+    "karma": "^0.12.21",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-coverage": "^0.2.5",
+    "karma-firefox-launcher": "^0.1.3",
+    "karma-jasmine": "^0.1.5",
+    "karma-mocha": "^0.1.6",
+    "karma-requirejs": "^0.2.2",
+    "mocha": "^1.21.3",
     "requirejs": "^2.1.14"
   }
 }
