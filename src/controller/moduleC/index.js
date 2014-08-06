@@ -7,7 +7,7 @@ define(function() {
 		return value;
 	};
 
-	ModuleC.prototype.get = function(key, value) {
+	ModuleC.prototype.get = function(key) {
 		return this[key];
 	};
 
