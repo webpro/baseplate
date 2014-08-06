@@ -4,3 +4,4 @@
 .sass-cache
 /node_modules
 /coverage
+/src/css/all.css
