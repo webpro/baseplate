@@ -1,3 +1,5 @@
+**THIS PROJECT IS ABANDONED/UNMAINTAINED AS OF 2014/11/16**
+
 # baseplate
 
 The baseplate project provides excellent workflow & tooling to develop, build, and test non-trivial SPAs. Check out the stack below to see if it's for you.
